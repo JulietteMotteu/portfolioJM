@@ -110,6 +110,7 @@ nav {
             padding-bottom: 15px;
             writing-mode: vertical-rl;
             text-orientation: mixed;
+            font-family: $fontText;
             a {
                 height: 20px;
                 color: $mauve;
@@ -129,6 +130,10 @@ nav {
                 width: 150%;
                 height: 0;
             }
+            .link {
+                text-decoration: none !important;
+                color: $mauve !important;
+            }
             a:hover {
                 background-size: 100% 100%;
             }
@@ -142,11 +147,13 @@ nav {
 }
 
 section {
-    margin-left: 10vh;
+    /*margin-left: 10vh;
     margin-top: 10vh;
-    margin-bottom: 20vh;
+    margin-bottom: 20vh;*/
     font-size: 15px;
     padding-top: 50px;
+    width: 92%;
+    font-family: $fontText;
 }
 
 h3 {
@@ -162,29 +169,37 @@ p {
 
 /* Section about */
 #about {
-    width: 50%;
+    background-color: $mauve;
+    position: relative;
+ 
     h3 {
+        color: white;
         font-size: 50px;
         position: relative;
-        width: 100%;
+        width: 50%;
         text-align: right;
         margin-bottom: 50px;
     }
     h3::after {
         @extend %ligne;
     }
-    p {
+    div {
+        width: 50%;
         margin-top: 20px;
+        color: white;
+        font-size: 18px;
+        position: absolute;
+        right: 20vw;
     }
 }
 
 
 /* Section skills */
 #skills {
-    margin-top: 100px;
+   /* background-color: #3b296f;*/
     display: flex;
-    width: 85%;
     h3 {
+        color: $lightGreen;
         margin-top: 100px;
         font-size: 35px;
         width: 60vh;
@@ -197,6 +212,7 @@ p {
     }
     h3::after {
         @extend %ligne;
+        background-color: $mauve;
         left: -10vh;
         width: 80vh;
         bottom: 60%;
@@ -266,7 +282,6 @@ p {
 
 /* Section parcours */
 #parcours {
-    width: 80%;
     padding-top: 50px;
     h3 {
         font-size: 40px;
@@ -294,5 +309,78 @@ p {
     div:hover {
         color: $mauve;
         font-weight: 700;
+    }
+}
+
+#portfolio {
+    background-color: $mauve;
+    h3 {
+        color: white;
+    }
+    #portfolioItems {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-wrap: wrap;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        img {
+            width: 200px;
+            height: 200px;
+        }
+        > div {
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+ /*           padding: 10px;*/
+            margin: 20px;
+        }
+    }
+}
+.modal {
+    padding: 50px;
+    max-width: 70%;
+    width: 70%;
+    .button-modal {
+        text-decoration: none;
+        background-color: $lightGreen;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+}
+
+#contact {
+    background-color: $darkGreen;
+    h3 {
+        color: $lightGreen;
+        font-size: 40px;
+    }
+    form {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+footer {
+    width: 92%;
+    height: 20vh;
+    background-color: $darkGreen;
+    font-family: $fontText;
+    p {
+        margin: 0;
+        text-align: center;
+        color: white;
     }
 }

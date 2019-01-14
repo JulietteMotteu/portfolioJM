@@ -10,6 +10,9 @@
     <!--Normalize-->
     <link rel="stylesheet" href="./style/normalize.css">
     
+    <!--jQuery Modal-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    
     <!--Style-->
     <link rel="stylesheet" href="./style/style.css">
     
@@ -18,14 +21,19 @@
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
+    
+    <!--jQuery Modal-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    
     <!--Typetype-->
     <script src="js/jquery.typetype.min.js"></script>
+    
+    <script src="js/jquery.scrollify.js"></script>
 </head>
 
 <body>
    
-    <header>
-        <div id="home">
+    <header id="home" class="sectionNav" data-section-name="home">
             <div>
                 <div id="nomProfession">
                     <h1>Juliette Motteu</h1>
@@ -35,34 +43,34 @@
             </div>
             <nav id="navVerticale">
                 <ul id="listeNav">
-                    <li><a href="#home">Accueil</a></li>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#skills">Compétences</a></li>
-                    <li><a href="#parcours">Parcours</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" class="link">Accueil</a></li>
+                    <li><a href="#about" class="link">À propos</a></li>
+                    <li><a href="#skills" class="link">Compétences</a></li>
+                   <!-- <li><a href="#parcours" class="link">Parcours</a></li>-->
+                    <li><a href="#portfolio" class="link">Portfolio</a></li>
+                    <li><a href="#contact" class="link">Contact</a></li>
                     
                 </ul>
             </nav>
-        </div>
     </header>
 
 
     <main>
        
-        <section id="about">
+        <section id="about" class="sectionNav" data-section-name="about">
            
-            <h3>À propos</h3>
+               <h3>À propos</h3>
+                
+                <div>  
+                    <p><strong>À la recherche d'un stage</strong></p>
 
-            <p><strong>À la recherche d'un stage</strong></p>
+                    <p>Jeune front-end developeuse, je me suis découvert une passion pour le monde du web et la programmation grâce à ma formation à Interface3. C'est après une expérience variée que je me suis tournée vers la programmation et plus particulièrement le développement front-end : en effet, cela me permet de combiner ma créativité, ma logique et mon insatiable envie d'apprendre!</p>
 
-            <p>Jeune front-end developeuse, je me suis découvert une passion pour le monde du web et la programmation grâce à ma formation à Interface3. C'est après une expérience variée que je me suis tournée vers la programmation et plus particulièrement le développement front-end : en effet, cela me permet de combiner ma créativité, ma logique et mon insatiable envie d'apprendre!</p>
-
-            <p>Aujourd'hui j'ai envie de m'investir dans une structure où je pourrai "toucher à tout": programmer en PHP et JavaScript, coder en HTML et CSS et utiliser les outils graphiques Adobe.</p>
-
+                    <p>Aujourd'hui j'ai envie de m'investir dans une structure où je pourrai "toucher à tout": programmer en PHP et JavaScript, coder en HTML et CSS et utiliser les outils graphiques Adobe.</p>
+                </div>
         </section>
         
-        <section id="skills">
+        <section id="skills" class="sectionNav" data-section-name="skills">
             <h3>Compétences</h3>
             
             <div>
@@ -142,45 +150,32 @@
 
                 <h4>Expérience</h4>-->
 
-        <section id="portfolio">
+        <section id="portfolio" class="sectionNav" data-section-name="portfolio">
             <h3>Portfolio</h3>
             
-            <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-            
-
-            <!-- Modal -->
-            <div id="myModal" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Robocode</h4>
-                  </div>
-                  <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
+            <div id="portfolioItems">
+                <div>
+                    <a href="#weLoveLace" rel="modal:open"><img src="./img/we_love_lace_mini.png" alt=""></a>
+                    <div id="weLoveLace" class="modal">
+                      <h4>We Love Lace</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid numquam sapiente, sint. Aspernatur ab mollitia reiciendis velit, magni aperiam molestiae perspiciatis sunt. Libero, totam accusamus, quis dignissimos odio modi repellendus dolor ex expedita illum nam, eius quibusdam voluptatum. Quos ipsam soluta similique veritatis animi. Dolor velit illum praesentium, deserunt sequi incidunt excepturi maiores fuga temporibus et voluptatum dicta commodi, officia natus optio! Quidem consectetur neque tempora libero impedit saepe totam nam expedita doloribus quam quae, deserunt odio natus molestias delectus consequuntur, quod tenetur. Magnam nulla autem harum a aut qui placeat voluptatem consequuntur et quasi! Totam, deleniti libero laborum quae!</p>
+                      <img src="./img/we_love_lace.jpg" alt="">
+                      <a href="" class="button-modal">Demo</a>
+                      <a href="#" rel="modal:close" class="button-modal">Close</a>
+                    </div>
                 </div>
-
-              </div>
-            </div>
-            
-            <div>
+                
                 <div></div>
-                <div></div>
+                
                 <div></div>
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
+            
         </section>
 
-        <section id="contact">
+        <section id="contact" class="sectionNav" data-section-name="contact">
             <h3>Contact</h3>
 
             <form method="post">
@@ -193,7 +188,7 @@
 
     </main>
 
-    <footer>
+    <footer class="footerJM">
         <p>Made with love by Juliette Motteu</p>
 
     </footer>
@@ -226,6 +221,21 @@
         window.addEventListener('resize', function(e){
             positionNav();
         }); 
+        
+        $(function() {
+            $.scrollify({
+                section : ".sectionNav",
+                sectionName : "section-name",
+                standardScrollElements: "#contact",
+                interstitialSection : ".footerJM",
+            });
+            $('.link').click(function(e){
+                e.preventDefault();
+                var moveTo = $(this).attr('href');
+                $.scrollify.move(moveTo);
+                console.log(moveTo);
+            });
+        });
     
     </script>
 </body>

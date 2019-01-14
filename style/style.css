@@ -88,7 +88,8 @@ nav {
       padding-top: 15px;
       padding-bottom: 15px;
       writing-mode: vertical-rl;
-      text-orientation: mixed; }
+      text-orientation: mixed;
+      font-family: Montserrat; }
       nav ul li a {
         height: 20px;
         color: #8132bc;
@@ -106,6 +107,9 @@ nav {
         background: rgba(148, 166, 39, 0.65);
         width: 150%;
         height: 0; }
+      nav ul li .link {
+        text-decoration: none !important;
+        color: #8132bc !important; }
       nav ul li a:hover {
         background-size: 100% 100%; }
       nav ul li a:hover::before {
@@ -114,11 +118,13 @@ nav {
         transition: height 0.5s; }
 
 section {
-  margin-left: 10vh;
+  /*margin-left: 10vh;
   margin-top: 10vh;
-  margin-bottom: 20vh;
+  margin-bottom: 20vh;*/
   font-size: 15px;
-  padding-top: 50px; }
+  padding-top: 50px;
+  width: 92%;
+  font-family: Montserrat; }
 
 h3 {
   font-size: 18px;
@@ -131,22 +137,29 @@ p {
 
 /* Section about */
 #about {
-  width: 50%; }
+  background-color: #8132bc;
+  position: relative; }
   #about h3 {
+    color: white;
     font-size: 50px;
     position: relative;
-    width: 100%;
+    width: 50%;
     text-align: right;
     margin-bottom: 50px; }
-  #about p {
-    margin-top: 20px; }
+  #about div {
+    width: 50%;
+    margin-top: 20px;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    right: 20vw; }
 
 /* Section skills */
 #skills {
-  margin-top: 100px;
-  display: flex;
-  width: 85%; }
+  /* background-color: #3b296f;*/
+  display: flex; }
   #skills h3 {
+    color: #94a627;
     margin-top: 100px;
     font-size: 35px;
     width: 60vh;
@@ -157,6 +170,7 @@ p {
     left: -10vw;
     text-align: center; }
   #skills h3::after {
+    background-color: #8132bc;
     left: -10vh;
     width: 80vh;
     bottom: 60%;
@@ -208,7 +222,6 @@ p {
 
 /* Section parcours */
 #parcours {
-  width: 80%;
   padding-top: 50px; }
   #parcours h3 {
     font-size: 40px;
@@ -229,3 +242,65 @@ p {
   #parcours div:hover {
     color: #8132bc;
     font-weight: 700; }
+
+#portfolio {
+  background-color: #8132bc; }
+  #portfolio h3 {
+    color: white; }
+  #portfolio #portfolioItems {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center; }
+    #portfolio #portfolioItems img {
+      width: 200px;
+      height: 200px; }
+    #portfolio #portfolioItems > div {
+      width: 200px;
+      height: 200px;
+      background-color: #fff;
+      /*           padding: 10px;*/
+      margin: 20px; }
+
+.modal {
+  padding: 50px;
+  max-width: 70%;
+  width: 70%; }
+  .modal .button-modal {
+    text-decoration: none;
+    background-color: #94a627;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px; }
+
+#contact {
+  background-color: #2a590c; }
+  #contact h3 {
+    color: #94a627;
+    font-size: 40px; }
+  #contact form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column; }
+
+footer {
+  width: 92%;
+  height: 20vh;
+  background-color: #2a590c;
+  font-family: Montserrat; }
+  footer p {
+    margin: 0;
+    text-align: center;
+    color: white; }
