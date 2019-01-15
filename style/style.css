@@ -144,6 +144,8 @@ p {
       h3::after {
           @extend %ligne;
       }*/ }
+  #about h3 {
+    color: white; }
   #about div {
     width: 50%;
     margin-top: 20px;
