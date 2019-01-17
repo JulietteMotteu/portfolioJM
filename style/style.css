@@ -37,34 +37,48 @@ html {
     top: 50vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     padding: 20px;
     font-family: Raleway; }
     #home > div > div h1 {
       font-weight: 500;
-      margin-left: auto;
-      margin-right: auto;
-      text-transform: uppercase;
       margin-top: 0;
+      text-transform: uppercase;
       font-size: 4rem;
       letter-spacing: 5px;
-      padding: 0; }
+      text-indent: 5px;
+      padding: 0;
+      text-align: center; }
     #home > div > div h2 {
-      margin-left: auto;
-      margin-right: auto;
+      display: inline-block;
       font-size: 1.4rem;
       text-transform: uppercase;
       font-weight: 300;
-      letter-spacing: 20px; }
+      letter-spacing: 21px;
+      text-align: center;
+      text-indent: 21px; }
+@keyframes animImage {
+  0% {
+    /*   top: -20vh;*/
+    opacity: 0; }
+  100% {
+    /*            top: 20vh;*/
+    opacity: 1; } }
   #home > div img {
+    animation-name: animImage;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
     position: absolute;
+    max-width: 100%;
+    max-height: 100%;
     top: 20vh;
-    margin-left: calc(50% - 85.5px); }
+    left: calc(50% - 85.5px); }
 
 img {
   margin: 0; }
 
 nav {
+  z-index: 9999;
   margin-right: 20px;
   position: fixed;
   right: 20px; }
@@ -118,7 +132,7 @@ h3 {
   text-align: center;
   font-size: 40px;
   text-transform: uppercase;
-  font-weight: 300; }
+  font-weight: 700; }
 
 p {
   text-align: justify; }
@@ -154,11 +168,19 @@ p {
 
 /* Section skills */
 #skills {
+  background-image: url("../img/graphic2.png"), url("../img/bracket.png"), url("../img/bracket-right.png");
+  /*    background-size: 37%, 4%, 4%;*/
+  background-size: 37%, 4%, 4%;
+  /*    background-position: 95% 90%, 8% 60%, 32% 60%;*/
+  background-position: 105% 120%, 7% 55%, 32% 55%;
+  background-repeat: no-repeat;
   /*   border: 15px solid $darkGreen;*/
-  background-color: #94a627; }
+  background-color: #2a590c;
+  position: relative;
+  z-index: 0; }
   #skills > div {
     margin-top: 15vh;
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: -webkit-flex;
@@ -168,36 +190,52 @@ p {
     display: flex;
     justify-content: space-around;
     position: relative;
-    align-items: flex-start; }
-  #skills h3 {
+    align-items: flex-start;
     color: white; }
+  #skills::before {
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 40%;
+    bottom: 10%;
+    right: 10%;
+    right: 20%;
+    background-color: #94a627; }
+  #skills h3 {
+    position: relative;
+    color: white;
+    z-index: 9999; }
+    #skills h3::after {
+      z-index: -1;
+      position: absolute;
+      content: '';
+      height: 12px;
+      width: 55vw;
+      top: 12vh;
+      left: -5vh;
+      background-color: #94a627; }
   #skills #code {
-    border-left: 8px solid #8132bc;
-    padding-left: 100px;
-    padding-bottom: 50px; }
+    margin-top: -7vh;
+    margin-left: 0vw;
+    position: relative; }
   #skills #graphisme {
-    border-bottom: 8px solid #8132bc;
-    padding-bottom: 50px;
-    padding-left: 100px; }
+    /*        margin-top: 18vh;
+            margin-right: -7vw;*/
+    margin-top: 18vh;
+    margin-right: 10%; }
   #skills #code, #skills #graphisme {
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
     display: flex;
-    align-items: flex-start;
-    flex-direction: column; }
-    #skills #code > div, #skills #graphisme > div {
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
-      display: flex;
-      justify-content: flex-start; }
+    align-items: center;
+    flex-direction: column;
+    text-align: center; }
     #skills #code h4, #skills #graphisme h4 {
       text-transform: uppercase;
-      font-size: 20px;
-      font-weight: 400; }
+      font-size: 25px;
+      font-weight: 700; }
     #skills #code ul, #skills #graphisme ul {
       padding: 0; }
     #skills #code li, #skills #graphisme li {
@@ -209,18 +247,11 @@ p {
         padding-right: 10px;
         font-size: 15px;
         margin-left: 10px; }
-    #skills #code .fa-laptop-code, #skills #code .fa-paint-brush, #skills #graphisme .fa-laptop-code, #skills #graphisme .fa-paint-brush {
-      /*            display: block;
-                  border: 1px solid $mauve;*/
-      width: 70px;
-      height: 70px;
-      text-align: center;
-      line-height: 70px; }
 
 /* Section portfolio */
 #portfolio {
-  /*   background-color: $mauve;*/
-  border: 15px solid #8132bc;
+  background-color: #8132bc;
+  /*    border: 15px solid $mauve;*/
   position: relative;
   /*    display: -webkit-flex;
       display: -moz-flex;
