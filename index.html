@@ -7,11 +7,15 @@
     <title>Juliette Motteu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!--LIENS FEUILLES DE STYLE-->
     <!--Normalize-->
     <link rel="stylesheet" href="./style/normalize.css">
     
-    <!--jQuery Modal-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <!--Tingle-->
+    <link rel="stylesheet" href="./style/tingle.css">
+    
+    <!--AOS-->
+    <link rel="stylesheet" href="./style/aos.css" />
     
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -19,37 +23,44 @@
     <!--Style-->
     <link rel="stylesheet" href="./style/style.css">
     
+    <!--LIENS SCRIPTS-->
     <!--jQuery-->
     <script 
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
+    
     <!--Typed-->
     <script src="js/typed.js"></script>
-    
-    <!--jQuery Modal-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     
     <!--Scrollify-->
     <script src="js/jquery.scrollify.js"></script>
     
+    <!--Tingle-->
+    <script src="js/tingle.js"></script>
+    
+    <!--AOS-->
+    <script src="./js/aos.js"></script>
+    
 </head>
 
 <body>
-   
     <header id="home" class="sectionNav" data-section-name="home">
             <div>
+                <img src="./img/logo-intro.png" alt="">
                 <div>
                     <h1>Juliette Motteu</h1>
-                    <div>
-                        <div class="typed-strings"></div>
+          
+                    <h2>
+                        <div class="typed-strings">
+                             <span>Front-end developer</span>
+                        </div>
                         <span class="typed"></span>
-                    </div>
+                    </h2>
                 </div>
-                <img src="./img/logo-Juju-final.png" alt="">
                 <div class="chevron"></div>
             </div>
-            <nav id="navVerticale">
+            <nav id="navVerticale" class="not styled">
                 <ul id="listeNav">
                     <li><a href="#home" class="link">Accueil</a></li>
                     <li><a href="#about" class="link">À propos</a></li>
@@ -58,6 +69,7 @@
                     <li><a href="#contact" class="link">Contact</a></li>
                 </ul>
             </nav>
+        
     </header>
 
 
@@ -67,8 +79,8 @@
            
                <h3>À propos</h3>
                 
-                <div>  
-                    <p><strong>À la recherche d'un stage</strong></p>
+                <div data-aos="fade-right">  
+                    <p id="stage">##<span><strong>À la recherche d'un stage</strong></span>##</p>
 
                     <p>Jeune front-end developeuse, je me suis découvert une passion pour le monde du web et la programmation grâce à ma formation à Interface3. C'est après une expérience variée que je me suis tournée vers la programmation et plus particulièrement le développement front-end : en effet, cela me permet de combiner ma créativité, ma logique et mon insatiable envie d'apprendre!</p>
 
@@ -80,8 +92,8 @@
             <h3>Compétences</h3>
             
             <div>
-                <div id="code">
-                    <h4>## Code</h4>
+                <div id="code" data-aos="fade-right">
+                    <h4>##<span>Code</span>##</h4>
                     <ul>
                         <li>HTML5</li>
                         <li>CSS3</li>
@@ -97,8 +109,8 @@
                     </ul>
                 </div>
                 
-                <div id="graphisme">
-                    <h4>## Graphisme</h4>
+                <div id="graphisme" data-aos="fade-left">
+                    <h4>##<span>Graphisme</span>##</h4>
                     <ul>
                         <li>Photoshop</li>
                         <li>Illustrator</li>
@@ -112,19 +124,23 @@
         </section>
 
         <section id="portfolio" class="sectionNav" data-section-name="portfolio">
-            <h3>Portfolio</h3>
+           
+            <div data-aos="fade-left">
+                <h3>Portfolio</h3>
+            </div>
+           
             
             <div id="portfolioItems">
-                <div>
-                    <a href="#weLoveLace" rel="modal:open"><img src="./img/we_love_lace_mini.png" alt=""></a>
-                    <div id="weLoveLace" class="modal">
+
+                    <a href="#weLoveLace" class="tingle-modal"><img src="./img/we_love_lace_mini.png" alt=""></a>
+                    
+                    <div id="weLoveLace">
                       <h4>We Love Lace</h4>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid numquam sapiente, sint. Aspernatur ab mollitia reiciendis velit, magni aperiam molestiae perspiciatis sunt. Libero, totam accusamus, quis dignissimos odio modi repellendus dolor ex expedita illum nam, eius quibusdam voluptatum. Quos ipsam soluta similique veritatis animi. Dolor velit illum praesentium, deserunt sequi incidunt excepturi maiores fuga temporibus et voluptatum dicta commodi, officia natus optio! Quidem consectetur neque tempora libero impedit saepe totam nam expedita doloribus quam quae, deserunt odio natus molestias delectus consequuntur, quod tenetur. Magnam nulla autem harum a aut qui placeat voluptatem consequuntur et quasi! Totam, deleniti libero laborum quae!</p>
                       <img src="./img/we_love_lace.jpg" alt="">
-                      <a href="" class="button-modal">Demo</a>
-                      <a href="#" rel="modal:close" class="button-modal">Close</a>
+                      <a href="">Demo</a>
+                      <a href="#">Close</a>
                     </div>
-                </div>
                 
                 <div></div>
                 
@@ -138,13 +154,7 @@
 
         <section id="contact" class="sectionNav" data-section-name="contact">
             <h3>Contact</h3>
-
-            <form method="post">
-                
-                <input type="email" placeholder="Email">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Votre message"></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
+            <a href="mailto:juliettemotteu@gmail.com">Envoyez-moi un mail ;-&#41;</a>
         </section>
 
     </main>
@@ -192,6 +202,8 @@
                 sectionName : "section-name",
                 standardScrollElements: "#contact",
                 interstitialSection : ".footerJM",
+                afterResize: AOS.refresh,
+                afterRender: AOS.refresh,
             });
             $('.link').click(function(e){
                 e.preventDefault();
@@ -201,12 +213,22 @@
             });
             // Typetype
             var typed = new Typed('.typed', {
-                strings: ['<h2>Front-end developer</h2>'],
+                stringsElement: '.typed-strings',
                 typeSpeed: 80,
+                contentType: 'html',
                 cursorChar: '_',
+                startDelay: 1500,
             });
         });
-
+        
+        //AOS
+        AOS.init({
+            duration: 1000,
+        });
+/*
+        let liensModal = document.getElementsByClassName("tingle-modal");
+        console.log(liensModal);
+        */
         
     </script>
 </body>

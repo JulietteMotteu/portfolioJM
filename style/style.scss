@@ -1,18 +1,12 @@
-@font-face {
-  font-family: nevis;
-  src: url(../fonts/nevis.ttf);
-}
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900'), url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900');
 
 $lightGreen: #94a627;
 $darkGreen: #2a590c;
 $mauve: #8132bc;
 $darkGrey: #424242;
-/*$greentr: rgba(144, 238, 144, 0.79);*/
 $greentr: rgba(148, 166, 39, 0.65);
 $mauvetr: rgba(129, 50, 188, 0.58);
 $fontText: Raleway;
-$fontTitle: Raleway;
 
 %ligne {
     content: '';
@@ -27,7 +21,7 @@ $fontTitle: Raleway;
 html {
     font-size: 100%;
     font-family: $fontText;
-    color: $darkGrey;
+    color: #fff;
     font-weight: normal;
 }
 
@@ -44,31 +38,28 @@ html {
 #home > div {
     padding: 20px;
     background-color: $darkGreen;
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: 0 0;
     height: 100vh;
     width: 92%;
     color: white;
-    background-attachment: fixed;
     position: relative;
     > div {
         z-index: 9999;
-        width: 70%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         position: relative;
-        top: 50vh;
+        top: 45vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 20px;
-        font-family: $fontTitle;
+        font-family: $fontText;
         h1 {
             font-weight: 500;
             margin-top: 0;
+            margin-bottom: 3vh;
             text-transform: uppercase;
-            font-size: 4rem;
+            font-size: 4.6vw;
             letter-spacing: 5px;
             text-indent: 5px;
             padding: 0;
@@ -76,21 +67,41 @@ html {
         }
         h2 {
             display: inline-block;
-            font-size: 1.4rem;
+            font-size: 1.6vw;
             text-transform: uppercase;
             font-weight: 300;
             letter-spacing: 21px;
             text-align: center;
-            text-indent: 21px;
+            text-indent: 15px;
+            div {
+                margin: 0;
+            }
+        }
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        .typed {
+            display: inline-block;
+        }
+        .typed-cursor {
+            animation: blink 0.7s infinite;
+            letter-spacing: 0;
+            text-indent: 0;
         }
     }
     @keyframes animImage {
         0% { 
-         /*   top: -20vh;*/
             opacity: 0;
         }
         100% { 
-/*            top: 20vh;*/
             opacity: 1;
         }
     }
@@ -102,7 +113,7 @@ html {
         max-width: 100%;
         max-height: 100%;
         top: 20vh;
-        left: calc(50% - 85.5px);
+        left: calc(50% - 38.5px);
     }
 }
 
@@ -110,12 +121,15 @@ html {
 img {
     margin: 0;
 }
-nav {
+#navVerticale {
     z-index: 9999;
     margin-right: 20px;
     position: fixed;
-    right: 20px;
-    ul {
+    right: 1.7%;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    #listeNav {
         margin-top: auto;
         margin-bottom: auto;
         display: flex;
@@ -125,10 +139,11 @@ nav {
             list-style-type: none;
             padding-top: 15px;
             padding-bottom: 15px;
-            writing-mode: vertical-rl;
+            writing-mode: vertical-rl !important;
             text-orientation: mixed;
             font-family: Montserrat;
-            a {
+            > a {
+                display: inline;
                 height: 20px;
                 color: $mauve;
                 font-weight: 500;
@@ -184,6 +199,10 @@ p {
 /* Section about */
 #about {
     background-color: $mauve;
+    background-image: url("../img/arrow-left.png"), url("../img/arrow-right.png");
+    background-size: 37%, 37%;
+    background-position: 0 10vh, 96% 95%;
+    background-repeat: no-repeat;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -191,25 +210,38 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        height: 12px;
+        width: 70vw;
+        top: 20vh;
+        right: 0%;
+        background-color: #bb97d6;
+    }
     h3 {
         color: white;
     }
-/*    h3 {
-        color: white;
-        font-size: 50px;
-        position: relative;
-        width: 50%;
-        text-align: right;
-        margin-bottom: 50px;
-    }
-    h3::after {
-        @extend %ligne;
-    }*/
     div {
         width: 50%;
-        margin-top: 20px;
+        margin-top: 10vh;
         color: white;
         font-size: 18px;
+        p {
+            margin-top: 5vh;
+        }
+        #stage {
+            font-size: 25px;
+        }
+        span {
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+        strong {
+            font-weight: 600;
+            text-transform: uppercase;
+        }
     }
 }
 
@@ -217,12 +249,9 @@ p {
 /* Section skills */
 #skills {
     background-image: url("../img/graphic2.png"), url("../img/bracket.png"), url("../img/bracket-right.png");
-/*    background-size: 37%, 4%, 4%;*/
     background-size: 37%, 4%, 4%;
-/*    background-position: 95% 90%, 8% 60%, 32% 60%;*/
     background-position: 105% 120%, 7% 55%, 32% 55%;
     background-repeat: no-repeat;
- /*   border: 15px solid $darkGreen;*/
     background-color: $darkGreen;
     position: relative;
     z-index: 0;
@@ -269,11 +298,8 @@ p {
     #code {
         margin-top: -7vh;
         margin-left: 0vw;
-        position: relative;
     }
     #graphisme {
-/*        margin-top: 18vh;
-        margin-right: -7vw;*/
         margin-top: 18vh;
         margin-right: 10%;
     }
@@ -289,7 +315,12 @@ p {
         h4 {
             text-transform: uppercase;
             font-size: 25px;
-            font-weight: 700;
+            font-weight: normal;
+            span {
+                font-weight: 700;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
         }
         ul {
             padding: 0;
@@ -311,17 +342,7 @@ p {
 /* Section portfolio */
 #portfolio {
     background-color: $mauve;
-/*    border: 15px solid $mauve;*/
     position: relative;
-/*    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    justify-content: space-around;*/
-    h3 {
-        color: rgba(66, 66, 66, 0.70);
-    }
     #portfolioItems {
         display: -webkit-flex;
         display: -moz-flex;
@@ -336,7 +357,9 @@ p {
         justify-content: center;
         img {
             width: 100%;
-         
+        }
+        h3 {
+            display: block;
         }
         > div {
             overflow: hidden;
@@ -367,43 +390,7 @@ p {
     background-color: $darkGreen;
     border: 10px solid $darkGreen;
     h3 {
-        color: $lightGreen;
         text-align: center;
-    }
-    form {
-        align-self: center;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 20vh;
-        width: 50%;
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        input, textarea, button {
-            width: 100%;
-            margin: 10px;
-            border-radius: 5px;
-            background-color: $darkGreen;
-            border: 1px solid $lightGreen;
-            padding: 10px;
-            &::placeholder {
-                color: $lightGreen;
-                opacity: 1;
-            }
-        }
-        button {
-            width: 100px;
-            color: $lightGreen;
-            transition: 0.4s;
-            &:hover {
-                background-color: $darkGrey;
-                transition: 0.4s;
-            }
-        }
     }
 }
 
