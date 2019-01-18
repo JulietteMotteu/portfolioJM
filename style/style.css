@@ -167,7 +167,7 @@ p {
     position: absolute;
     height: 12px;
     width: 70vw;
-    top: 20vh;
+    top: 25vh;
     right: 0%;
     background-color: #bb97d6; }
   #about h3 {
@@ -217,22 +217,21 @@ p {
     width: 12px;
     height: 40%;
     bottom: 10%;
-    right: 10%;
     right: 20%;
+    background-color: #94a627; }
+  #skills::after {
+    z-index: -1;
+    position: absolute;
+    content: '';
+    height: 12px;
+    width: 53vw;
+    top: 25vh;
+    left: 0;
     background-color: #94a627; }
   #skills h3 {
     position: relative;
     color: white;
     z-index: 9999; }
-    #skills h3::after {
-      z-index: -1;
-      position: absolute;
-      content: '';
-      height: 12px;
-      width: 55vw;
-      top: 12vh;
-      left: -5vh;
-      background-color: #94a627; }
   #skills #code {
     margin-top: -7vh;
     margin-left: 0vw; }
@@ -280,14 +279,14 @@ p {
     display: flex;
     flex-wrap: wrap;
     width: 70%;
-    margin-top: 10vh;
+    margin-top: 0;
     margin-left: auto;
     margin-right: auto;
     justify-content: center; }
     #portfolio #portfolioItems img {
       width: 100%; }
     #portfolio #portfolioItems h3 {
-      display: block; }
+      margin-top: 0; }
     #portfolio #portfolioItems > div {
       overflow: hidden;
       width: 210px;
@@ -324,3 +323,5 @@ footer {
     margin: 0;
     text-align: center;
     color: white; }
+
+/*# sourceMappingURL=style.css.map */
