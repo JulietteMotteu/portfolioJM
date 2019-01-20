@@ -11,9 +11,9 @@
     <!--Normalize-->
     <link rel="stylesheet" href="./style/normalize.css">
     
-    <!--Tingle-->
-    <link rel="stylesheet" href="./style/tingle.css">
-    
+    <!--Izimodal-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.css" />
+
     <!--AOS-->
     <link rel="stylesheet" href="./style/aos.css" />
     
@@ -36,8 +36,8 @@
     <!--Scrollify-->
     <script src="js/jquery.scrollify.js"></script>
     
-    <!--Tingle-->
-    <script src="js/tingle.js"></script>
+    <!--Izimodal-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.js"></script>
     
     <!--AOS-->
     <script src="./js/aos.js"></script>
@@ -131,6 +131,17 @@
            
             
             <div id="portfolioItems">
+                    
+           <!-- Modal structure -->
+            <div id="modal" data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home"> 
+                <!-- Modal content -->
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eveniet distinctio perspiciatis mollitia minima, at velit adipisci odio facilis numquam, nihil soluta tempore. Officiis assumenda quis quos, ipsa animi error.</p>
+            </div>
+
+            <!-- Trigger to open Modal -->
+            <a href="#modal" class="trigger">Modal</a>
+
+            <a href="#modal1" >Modal</a>
 
                     <a href="#weLoveLace" class="tingle-modal"><img src="./img/we_love_lace_mini.png" alt=""></a>
                     
@@ -219,16 +230,24 @@
                 cursorChar: '_',
                 startDelay: 1000,
             });
+            
+            // IziModal
+            $("#modal").iziModal({
+                headerColor: '#8132bc',
+            });
+            $(document).on('click', '.trigger', function (event) {
+                event.preventDefault();
+                // $('#modal').iziModal('setZindex', 99999);
+                // $('#modal').iziModal('open', { zindex: 99999 });
+                $('#modal').iziModal('open');
+            });
+        
         });
         
         //AOS
         AOS.init({
             duration: 1000,
         });
-/*
-        let liensModal = document.getElementsByClassName("tingle-modal");
-        console.log(liensModal);
-        */
         
     </script>
 </body>
