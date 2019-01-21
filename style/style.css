@@ -21,7 +21,7 @@ html {
   color: white;
   position: relative; }
   #home > div > div {
-    z-index: 9999;
+    z-index: 99;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -84,7 +84,7 @@ img {
   margin: 0; }
 
 #navVerticale {
-  z-index: 9999;
+  z-index: 99;
   margin-right: 20px;
   position: fixed;
   right: 1.7%;
@@ -323,5 +323,3 @@ footer {
     margin: 0;
     text-align: center;
     color: white; }
-
-/*# sourceMappingURL=style.css.map */

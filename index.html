@@ -129,33 +129,28 @@
                 <h3>Portfolio</h3>
             </div>
            
-            
             <div id="portfolioItems">
                     
-           <!-- Modal structure -->
-            <div id="modal" data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home"> 
-                <!-- Modal content -->
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eveniet distinctio perspiciatis mollitia minima, at velit adipisci odio facilis numquam, nihil soluta tempore. Officiis assumenda quis quos, ipsa animi error.</p>
-            </div>
-
-            <!-- Trigger to open Modal -->
-            <a href="#modal" class="trigger">Modal</a>
-
-            <a href="#modal1" >Modal</a>
-
-                    <a href="#weLoveLace" class="tingle-modal"><img src="./img/we_love_lace_mini.png" alt=""></a>
+               <!-- Modal structure -->
+                <div class="modalPortfolio" id="weLoveLace" data-iziModal-fullscreen="true"  data-iziModal-title="We Love Lace"  data-iziModal-subtitle="Projet de groupe"  data-iziModal-icon="icon-home"> 
+                   
+                    <!-- Modal content -->
+                    <p style="color: black">Site web réalisé en groupe ayant comme objectif de sensibiliser et informer sur le rôle et la place des femmes dans l’IT, et encourager l’implication et la visibilité des femmes par le biais d’activités ou d’évènements (workshops/conférences/rencontres).</p>
+                    <img src="./img/we_love_lace.jpg" alt="">
+                    <button>Demo</button>
                     
-                    <div id="weLoveLace">
-                      <h4>We Love Lace</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid numquam sapiente, sint. Aspernatur ab mollitia reiciendis velit, magni aperiam molestiae perspiciatis sunt. Libero, totam accusamus, quis dignissimos odio modi repellendus dolor ex expedita illum nam, eius quibusdam voluptatum. Quos ipsam soluta similique veritatis animi. Dolor velit illum praesentium, deserunt sequi incidunt excepturi maiores fuga temporibus et voluptatum dicta commodi, officia natus optio! Quidem consectetur neque tempora libero impedit saepe totam nam expedita doloribus quam quae, deserunt odio natus molestias delectus consequuntur, quod tenetur. Magnam nulla autem harum a aut qui placeat voluptatem consequuntur et quasi! Totam, deleniti libero laborum quae!</p>
-                      <img src="./img/we_love_lace.jpg" alt="">
-                      <a href="">Demo</a>
-                      <a href="#">Close</a>
-                    </div>
+                </div>
+
+                <a href="#" data-izimodal-open="#weLoveLace"><img src="./img/we_love_lace_mini.png" alt=""></a>
                 
-                <div></div>
+                <div class="modalPortfolio" id="robocode" data-iziModal-fullscreen="true"  data-iziModal-title="Robocode"  data-iziModal-subtitle="Projet de groupe"  data-iziModal-icon="icon-home"></div>
+                <a href="#" data-izimodal-open="#robocode"><img src="./img/we_love_lace_mini.png" alt=""></a>
                 
-                <div></div>
+                <div class="modalPortfolio" id="modal2" data-iziModal-fullscreen="true"  data-iziModal-title="We Love Lace"  data-iziModal-subtitle="Projet de groupe"  data-iziModal-icon="icon-home">
+                    
+                </div>
+                <a href="#" data-izimodal-open="#modal2"><img src="./img/we_love_lace_mini.png" alt=""></a>
+                
                 <div></div>
                 <div></div>
                 <div></div>
@@ -232,14 +227,16 @@
             });
             
             // IziModal
-            $("#modal").iziModal({
+            $(".modalPortfolio").iziModal({
                 headerColor: '#8132bc',
-            });
-            $(document).on('click', '.trigger', function (event) {
-                event.preventDefault();
-                // $('#modal').iziModal('setZindex', 99999);
-                // $('#modal').iziModal('open', { zindex: 99999 });
-                $('#modal').iziModal('open');
+                transitionIn: 'comingIn',
+                bodyOverflow: true,
+                onOpened: function() {
+                    $.scrollify.disable();
+                },
+                onClosing: function() {
+                    $.scrollify.enable();
+                }
             });
         
         });

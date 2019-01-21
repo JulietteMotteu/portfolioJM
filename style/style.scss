@@ -44,7 +44,7 @@ html {
     color: white;
     position: relative;
     > div {
-        z-index: 9999;
+        z-index: 99;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -123,7 +123,7 @@ img {
     margin: 0;
 }
 #navVerticale {
-    z-index: 9999;
+    z-index: 99;
     margin-right: 20px;
     position: fixed;
     right: 1.7%;
