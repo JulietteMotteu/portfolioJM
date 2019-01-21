@@ -193,10 +193,6 @@ h3 {
     font-weight: 700;
 }
 
-p {
-    text-align: justify;
-}
-
 /* Section about */
 #about {
     background-color: $mauve;
@@ -226,11 +222,13 @@ p {
     }
     div {
         width: 50%;
-        margin-top: 10vh;
+        margin-top: 7vh;
         color: white;
-        font-size: 18px;
+        font-size: 16px;
+        line-height: 1.7;
         p {
             margin-top: 5vh;
+            font-weight: 200;
         }
         #stage {
             font-size: 25px;
@@ -251,7 +249,7 @@ p {
 #skills {
     background-image: url("../img/graphic2.png"), url("../img/bracket.png"), url("../img/bracket-right.png");
     background-size: 37%, 4%, 4%;
-    background-position: 105% 120%, 7% 55%, 32% 55%;
+    background-position: 105% 120%, 7% 65%, 32% 65%;
     background-repeat: no-repeat;
     background-color: $darkGreen;
     position: relative;
@@ -300,7 +298,7 @@ p {
         margin-left: 0vw;
     }
     #graphisme {
-        margin-top: 18vh;
+        margin-top: 14vh;
         margin-right: 10%;
     }
     #code, #graphisme {
@@ -327,14 +325,10 @@ p {
         }
         li {
             list-style-type: none;
-            font-weight: 400;
+            font-weight: 200;
             margin: 5px 10px 5px 10px;
-            font-size: 18px;
-            i {
-                padding-right: 10px;
-                font-size: 15px;
-                margin-left: 10px;
-            }
+            font-size: 16px;
+            line-height: 1.5;
         }
     }
 }
@@ -350,39 +344,29 @@ p {
         display: -o-flex;
         display: flex;
         flex-wrap: wrap;
-        width: 70%;
+        width: 90%;
         margin-top: 0;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 0;
         justify-content: center;
-        img {
+        .imgPortfolio {
             width: 100%;
+            height: auto;
         }
         h3 {
             margin-top: 0;
         }
-        > div {
+        .lienPortfolio {
             overflow: hidden;
-            width: 210px;
-            height: 210px;
+            width: 300px;
+            height: 200px;
             background-color: #fff;
-            border-radius: 50%;
-        /*    border: 5px solid $lightGreen;*/
- /*           padding: 10px;*/
             margin: 20px;
         }
-    }
-}
-.modal {
-    padding: 50px;
-    max-width: 70%;
-    width: 70%;
-    .button-modal {
-        text-decoration: none;
-        background-color: $lightGreen;
-        padding: 10px;
-        margin-bottom: 20px;
-        border-radius: 5px;
+        .modalPortfolio {
+            display: none;
+        }
     }
 }
 

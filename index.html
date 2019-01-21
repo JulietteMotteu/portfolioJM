@@ -134,33 +134,42 @@
                <!-- Modal structure -->
                 <div class="modalPortfolio" id="weLoveLace" data-iziModal-fullscreen="true"  data-iziModal-title="We Love Lace"  data-iziModal-subtitle="Projet de groupe"  data-iziModal-icon="icon-home"> 
                    
-                    <!-- Modal content -->
+<!--                    Modal content -->
                     <p style="color: black">Site web réalisé en groupe ayant comme objectif de sensibiliser et informer sur le rôle et la place des femmes dans l’IT, et encourager l’implication et la visibilité des femmes par le biais d’activités ou d’évènements (workshops/conférences/rencontres).</p>
                     <img src="./img/we_love_lace.jpg" alt="">
                     <button>Demo</button>
                     
                 </div>
 
-                <a href="#" data-izimodal-open="#weLoveLace"><img src="./img/we_love_lace_mini.png" alt=""></a>
-                
-                <div class="modalPortfolio" id="robocode" data-iziModal-fullscreen="true"  data-iziModal-title="Robocode"  data-iziModal-subtitle="Projet de groupe"  data-iziModal-icon="icon-home"></div>
-                <a href="#" data-izimodal-open="#robocode"><img src="./img/we_love_lace_mini.png" alt=""></a>
-                
-                <div class="modalPortfolio" id="modal2" data-iziModal-fullscreen="true"  data-iziModal-title="We Love Lace"  data-iziModal-subtitle="Projet de groupe"  data-iziModal-icon="icon-home">
-                    
+                <div class="lienPortfolio">
+                    <a href="#" data-izimodal-open="#weLoveLace"><img class="imgPortfolio" src="./img/we_love_lace_mini.png" alt=""></a>
                 </div>
-                <a href="#" data-izimodal-open="#modal2"><img src="./img/we_love_lace_mini.png" alt=""></a>
                 
-                <div></div>
-                <div></div>
-                <div></div>
+                <div class="modalPortfolio" id="robocode" data-iziModal-fullscreen="true"  data-iziModal-title="Robocode"  data-iziModal-subtitle="Hackaton"  data-iziModal-icon="icon-home"></div>
+                <div class="lienPortfolio">
+                    <a href="#" data-izimodal-open="#robocode"><img src="" alt=""></a>
+                </div>
+                
+                <div class="modalPortfolio" id="modal2" data-iziModal-fullscreen="true"  data-iziModal-title="We Love Lace"  data-iziModal-subtitle="Projet de groupe"  data-iziModal-icon="icon-home">    
+                </div>
+                <div class="lienPortfolio">
+                    <a href="#" data-izimodal-open="#modal2"><img src="./img/we_love_lace_mini.png" alt=""></a>
+                </div>
+                
+                <div class="lienPortfolio"></div>
+                <div class="lienPortfolio"></div>
+                <div class="lienPortfolio"></div>
             </div>
             
         </section>
 
         <section id="contact" class="sectionNav" data-section-name="contact">
             <h3>Contact</h3>
+            <p>N'hasitez pas à me contacter</p>
             <a href="mailto:juliettemotteu@gmail.com">Envoyez-moi un mail ;-&#41;</a>
+            <p>Envie de jeter un oeil à mon CV ?</p>
+            <p>Juliette Motteu</p>
+            <p>+32 487 10 66 73</p>
         </section>
 
     </main>
@@ -233,11 +242,14 @@
                 bodyOverflow: true,
                 onOpened: function() {
                     $.scrollify.disable();
+                    $(".modalPortfolio").html().css('display', 'block');
                 },
                 onClosing: function() {
                     $.scrollify.enable();
-                }
+                },
+                
             });
+            
         
         });
         
