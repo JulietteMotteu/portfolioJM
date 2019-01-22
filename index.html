@@ -102,10 +102,11 @@
                         <li>jQuery</li>
                         <li>PHP</li>
                         <li>SQL</li>
+                        <li>Bootstrap</li>
                         <li>Wordpress</li>
                         <li>Drupal</li>
                         <li>Sass</li>
-                        <li>SassGit</li>
+                        <li>Git</li>
                     </ul>
                 </div>
                 
@@ -131,29 +132,72 @@
            
             <div id="portfolioItems">
                     
-               <!-- Modal structure -->
+               <!-- We Love Lace -->
                 <div class="modalPortfolio" id="weLoveLace" data-iziModal-fullscreen="true"  data-iziModal-title="We Love Lace"  data-iziModal-subtitle="Projet de groupe"  data-iziModal-icon="icon-home"> 
                    
-<!--                    Modal content -->
-                    <p style="color: black">Site web réalisé en groupe ayant comme objectif de sensibiliser et informer sur le rôle et la place des femmes dans l’IT, et encourager l’implication et la visibilité des femmes par le biais d’activités ou d’évènements (workshops/conférences/rencontres).</p>
-                    <img src="./img/we_love_lace.jpg" alt="">
-                    <button>Demo</button>
+                    <img src="./img/portfolio/wll-portraits.png" alt="">
                     
-                </div>
+                    <div>  
+                        <p>Site web réalisé en groupe ayant comme objectif de sensibiliser et informer sur le rôle et la place des femmes dans l’IT, et encourager l’implication et la visibilité des femmes par le biais d’activités ou d’évènements (workshops/conférences/rencontres).</p>
+                        <p>Nous avons beaucoup travaillé en PHP, en communiquant avec la base de données mais aussi en créant  un système de session, de like et d'inscription, combiné avec l'utilisation d'Ajax en JavaScript.</p>
+                        
+                        <p class="outils"><strong>Outils</strong></p>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Sass</li>
+                            <li>JavaScript</li>
+                            <li>PHP</li>
+                            <li>MySQL</li>
+                            <li>Git</li>
+                            <li>Git</li>
+                            <li>Animate</li>
+                            <li>Illustrator</li>
+                            <li>Photoshop</li>
+                            <li>Adobe XD</li>
+                        </ul>
+                        </div>
+                    </div>
 
                 <div class="lienPortfolio">
-                    <a href="#" data-izimodal-open="#weLoveLace"><img class="imgPortfolio" src="./img/we_love_lace_mini.png" alt=""></a>
+                    <a href="#" data-izimodal-open="#weLoveLace"><img class="imgPortfolio" src="./img/portfolio/welovelace-thumbnail.jpg" alt=""></a>
                 </div>
                 
-                <div class="modalPortfolio" id="robocode" data-iziModal-fullscreen="true"  data-iziModal-title="Robocode"  data-iziModal-subtitle="Hackaton"  data-iziModal-icon="icon-home"></div>
-                <div class="lienPortfolio">
-                    <a href="#" data-izimodal-open="#robocode"><img src="" alt=""></a>
+                <!--Robocode-->
+                <div class="modalPortfolio" id="robocode" data-iziModal-fullscreen="true"  data-iziModal-title="Robocode"  data-iziModal-subtitle="Hackaton"  data-iziModal-icon="icon-home">
+                   
+                    <p>Lors d'un hackaton réalisé à Interface3, les étudiants en front-end, back-end et game development se sont réunis autour du thème "Decode &amp; Code.</p>
+                    <p>En équipe (3 front-end, 1 back-end, 2 game) nous avons décidé de réaliser un petit jeu, "Robocode", pour apprendre les bases du code de manière ludique. Le but: faire bouger Sparky en complétant un code un trou, à l'aide d'un "drag &amp; drop".</p>
+
+                    <p class="outils"><strong>Outils</strong></p>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>jQuery</li>
+                    </ul>
+                    <a href="https://liviabuttons.github.io/roboCode/">Demo</a>
+                    
                 </div>
                 
-                <div class="modalPortfolio" id="modal2" data-iziModal-fullscreen="true"  data-iziModal-title="We Love Lace"  data-iziModal-subtitle="Projet de groupe"  data-iziModal-icon="icon-home">    
-                </div>
                 <div class="lienPortfolio">
-                    <a href="#" data-izimodal-open="#modal2"><img src="./img/we_love_lace_mini.png" alt=""></a>
+                    <a href="#" data-izimodal-open="#robocode"><img src="./img/portfolio/robocode-thumbnail.jpg" alt=""></a>
+                </div>
+                
+                <!--Sous l'océan-->
+                <div class="modalPortfolio" id="sousOcean" data-iziModal-fullscreen="true"  data-iziModal-title="Sous l'océan"  data-iziModal-subtitle="Projet personnel"  data-iziModal-icon="icon-home">    
+                    <p class="outils"><strong>Outils</strong></p>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                        <li>jQuery</li>
+                    </ul>
+                </div>
+                
+                <div class="lienPortfolio">
+                    <a href="#" data-izimodal-open="#sousOcean"><img src="./img/portfolio/sousocean-thumbnail.png" alt=""></a>
                 </div>
                 
                 <div class="lienPortfolio"></div>
@@ -168,6 +212,7 @@
             <p>N'hasitez pas à me contacter</p>
             <a href="mailto:juliettemotteu@gmail.com">Envoyez-moi un mail ;-&#41;</a>
             <p>Envie de jeter un oeil à mon CV ?</p>
+            <img src="./img/eye.png" alt="">
             <p>Juliette Motteu</p>
             <p>+32 487 10 66 73</p>
         </section>
@@ -240,6 +285,7 @@
                 headerColor: '#8132bc',
                 transitionIn: 'comingIn',
                 bodyOverflow: true,
+                width: "100%",
                 onOpened: function() {
                     $.scrollify.disable();
                     $(".modalPortfolio").html().css('display', 'block');
@@ -247,7 +293,6 @@
                 onClosing: function() {
                     $.scrollify.enable();
                 },
-                
             });
             
         
