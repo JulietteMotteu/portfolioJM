@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900");
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900");
-/*%ligne {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    height: 12px;
-    width: 100%;
-    background-color: $lightGreen;
-}*/
 html {
   font-size: 100%;
   font-family: Raleway;
@@ -41,7 +32,7 @@ html {
     padding: 20px;
     font-family: Raleway; }
     #home > div > div h1 {
-      font-weight: 600;
+      font-weight: 400;
       margin-top: 0;
       margin-bottom: 3vh;
       text-transform: uppercase;
@@ -54,7 +45,7 @@ html {
       display: inline-block;
       font-size: 1.6vw;
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 300;
       letter-spacing: 21px;
       text-align: center;
       text-indent: 15px; }
@@ -257,9 +248,9 @@ h3 {
     #skills #code h4, #skills #graphisme h4 {
       text-transform: uppercase;
       font-size: 25px;
-      font-weight: normal; }
+      font-weight: 200; }
       #skills #code h4 span, #skills #graphisme h4 span {
-        font-weight: 700;
+        font-weight: 600;
         margin-left: 15px;
         margin-right: 15px; }
     #skills #code ul, #skills #graphisme ul {
@@ -280,6 +271,7 @@ h3 {
   background-repeat: no-repeat;
   background-position: 90vh -10vh;
   position: relative;
+  padding-bottom: 50px;
   color: white; }
   #portfolio #portfolioItems {
     display: -webkit-flex;
@@ -289,10 +281,9 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     width: 90%;
-    margin-top: 15vh;
+    margin-top: 13vh;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0;
     justify-content: center; }
     #portfolio #portfolioItems .imgPortfolio {
       width: 100%;
@@ -308,30 +299,107 @@ h3 {
     #portfolio #portfolioItems .modalPortfolio {
       display: none; }
 
-.iziModal-content {
+#portfolio::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 75%;
+  top: 0;
+  left: 5%;
+  background-color: #bb97d6; }
+
+#portfolio::after {
+  content: '';
+  position: absolute;
+  height: 12px;
+  width: 15%;
+  top: 8vh;
+  left: 90%;
+  background-color: #bb97d6; }
+
+.iziModal-header-title, .iziModal-header-subtitle {
+  text-align: center !important; }
+
+.iziModal-content > div {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
   display: flex;
-  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px !important;
+  margin: 10px !important;
+  margin-bottom: 50px !important;
   color: #424242 !important; }
-  .iziModal-content div {
-    width: 50%;
+  .iziModal-content > div .imageModal {
+    width: 70%; }
+  .iziModal-content > div img {
+    max-width: 100%;
+    height: auto; }
+  .iziModal-content > div .infoModal {
+    width: 70%;
     line-height: 1.7;
-    margin-top: 50px;
-    margin-right: 20px;
-    margin-left: 10vw; }
-    .iziModal-content div strong {
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto; }
+    .iziModal-content > div .infoModal strong {
       text-transform: uppercase; }
-  .iziModal-content img {
-    width: 50%; }
+  .iziModal-content > div #demo {
+    width: 100%;
+    text-align: center; }
+  .iziModal-content > div a {
+    display: inline-block;
+    color: #8132bc;
+    border: 1px solid #8132bc;
+    margin-top: 20px;
+    padding: 10px 15px 10px 15px;
+    text-decoration: none;
+    transition: 0.5s; }
+    .iziModal-content > div a:hover {
+      color: #fff;
+      background-color: #8132bc;
+      transition: 0.5s; }
 
+#portraits .infoModal {
+  width: 70%;
+  margin-top: 0; }
+
+#imagesPortraits {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 70%; }
+  #imagesPortraits > .imageModal {
+    width: 45%;
+    margin: 10px; }
+    #imagesPortraits > .imageModal img {
+      width: 100%; }
+
+/* Contact */
 #contact {
   background-color: #2a590c;
-  color: #fff; }
+  color: #fff;
+  color: white;
+  font-size: 16px;
+  line-height: 1.7; }
   #contact h3 {
     text-align: center; }
+  #contact h4 {
+    margin-top: 5vh;
+    font-weight: 200;
+    font-size: 25px; }
+  #contact span {
+    margin-right: 15px;
+    margin-left: 15px;
+    font-weight: 600;
+    text-transform: uppercase; }
   #contact img {
     width: 200px;
     opacity: 0.7; }
@@ -345,3 +413,5 @@ footer {
     margin: 0;
     text-align: center;
     color: white; }
+
+/*# sourceMappingURL=style.css.map */
