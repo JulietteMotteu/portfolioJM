@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900");
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900");
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700");
 html {
   font-size: 100%;
   font-family: Raleway;
@@ -100,8 +101,7 @@ img {
       list-style-type: none;
       padding-top: 15px;
       padding-bottom: 15px;
-      writing-mode: vertical-rl !important;
-      text-orientation: mixed;
+      writing-mode: vertical-rl;
       font-family: Montserrat; }
       #navVerticale #listeNav li > a {
         display: inline;
@@ -401,8 +401,21 @@ h3 {
     font-weight: 600;
     text-transform: uppercase; }
   #contact img {
-    width: 200px;
     opacity: 0.7; }
+  #contact a {
+    color: #fff; }
+  #contact #infoContact {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
 
 footer {
   width: 92%;
@@ -414,4 +427,8 @@ footer {
     text-align: center;
     color: white; }
 
-/*# sourceMappingURL=style.css.map */
+/* Responsive */
+@media (max-width: 768px) {
+  #listeNav {
+    background-color: #fff;
+    flex-direction: column; } }

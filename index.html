@@ -60,7 +60,7 @@
                 </div>
                 <div class="chevron"></div>
             </div>
-            <nav id="navVerticale" class="not styled">
+            <nav id="navVerticale">
                 <ul id="listeNav">
                     <li><a href="#home" class="link">Accueil</a></li>
                     <li><a href="#about" class="link">À propos</a></li>
@@ -142,7 +142,7 @@
                         
                         <div class="infoModal">  
                             <p>Site web réalisé en groupe ayant comme objectif de sensibiliser et informer sur le rôle et la place des femmes dans l’IT, et encourager l’implication et la visibilité des femmes par le biais d’activités ou d’évènements (workshops/conférences/rencontres).</p>
-                            <p>Nous avons beaucoup travaillé en PHP, pour communiquer avec la base de données mais aussi pour créer un système de session, de like et d'inscription, combinés avec l'utilisation d'Ajax en JavaScript.</p>
+                            <p>Nous avons beaucoup travaillé en PHP, pour communiquer avec la base de données mais aussi pour créer un système de session, de like et d'inscription aux événements, combinés avec l'utilisation d'Ajax en JavaScript.</p>
 <!--
                             <p class="outils"><strong>Outils</strong></p>
                             <ul>
@@ -195,15 +195,17 @@
                 <!--Sous l'océan-->
                 <div class="modalPortfolio" id="sousOcean" data-iziModal-fullscreen="true"  data-iziModal-title="Sous l'océan"  data-iziModal-subtitle="Projet personnel"  data-iziModal-icon="icon-home">    
                     
-                    <p>Premier projet de formation, Sous l'Océan parle de ma passion de la plongée. J'ai surtout voulu mettre en avant les compétences que j'avais acquises en PHP </p>
-                    <p class="outils"><strong>Outils</strong></p>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>PHP</li>
-                        <li>MySQL</li>
-                        <li>jQuery</li>
-                    </ul>
+                    <div class="infoModal">
+                          <p>Premier projet de formation, Sous l'Océan parle de ma passion de la plongée. J'ai surtout voulu mettre en avant les compétences que j'avais acquises en PHP </p>
+                        <p class="outils"><strong>Outils</strong></p>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>PHP</li>
+                            <li>MySQL</li>
+                            <li>jQuery</li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <div class="lienPortfolio">
@@ -242,7 +244,7 @@
                     
                    <div>
                         <div class="infoModal">
-                            <p></p>
+                            <p>Ceci est mon tout premier site web! J'ai voulu créer un site sur la Nouvelle-Zélande où j'ai voyagé pendant 4 mois. Le site est conçu comme une sorte de blog : il y a une série d'articles sur les endroits à visiter que l'on peut commenter. J'ai aussi inclus une section "About" qui explique ce que j'ai fait pendant ces 4 mois, et une section "Connexion" qui permet de se créer un compte et de commenter les articles.</p>
                         </div>
                        
                     </div>
@@ -256,18 +258,27 @@
             
         </section>
 
+        <!--Contact-->
         <section id="contact" class="sectionNav" data-section-name="contact">
             <h3>Contact</h3>
             
-            <h4>##<span>Contactez-moi</span>##</h4>
-            <a href="mailto:juliettemotteu@gmail.com">Envoyez-moi un mail ;-&#41;</a>
-            
-            <h4>##<span>Envie de jeter un oeil à mon CV ?</span>##</h4>
-            <img src="./img/eye.png" alt="">
-            
-            <h4>##<span>Suivez-moi</span>##</h4>
-            <a href="https://github.com/juliette-m"><img src="" alt="">Github</a>
-            <a href="https://www.linkedin.com/in/juliette-motteu/"><img src="" alt="">LinkedIn</a>
+            <div id="infoContact" data-aos="fade-left">
+                <div>
+                    <h4>##<span>Contactez-moi</span>##</h4>
+                    <a href="mailto:juliettemotteu@gmail.com"><img src="./img/add-mail.png" alt=""></i>Envoyez-moi un mail ;-&#41;</a>
+                </div>
+                
+                <div>
+                    <h4>##<span>Lisez-moi</span>##</h4>
+                    <a href="./doc/CV Juliette Motteu.pdf">Mon CV</a>
+                </div>
+                
+                <div>
+                    <h4>##<span>Suivez-moi</span>##</h4>
+                    <a href="https://github.com/juliette-m"><i class="fab fa-github fa-2x"></i></a>
+                    <a href="https://www.linkedin.com/in/juliette-motteu/"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -281,10 +292,11 @@
         // Navigation verticale
         function positionNav() {
             let hauteurFenetre = window.innerHeight;
+            let largeurFenetre = window.innerWidth;
             let hauteurNav = navVerticale.offsetHeight;
             let lien = navVerticale.getElementsByTagName('li');
 
-            if (hauteurFenetre > hauteurNav) {
+            if (hauteurFenetre > hauteurNav && largeurFenetre > 768) {
                 listeNav.style.flexDirection = "column";
                 navVerticale.style.top = (hauteurFenetre - hauteurNav)/2 + "px";
                 console.log(navVerticale.style.top);
@@ -293,7 +305,6 @@
                 }
             }
             else {
-                listeNav.style.flexDirection = "row";
                 navVerticale.style.top = "20px";
                 for (let i=0; i<lien.length; i++) {
                     lien[i].style.writingMode = "horizontal-tb";
@@ -301,11 +312,15 @@
                 console.log(hauteurFenetre);
             }
         }
-        positionNav();
         
+        console.log(window.innerWidth);
+        positionNav();
+
         window.addEventListener('resize', function(e){
             positionNav();
         }); 
+    
+        
         
         
         $(function() {
