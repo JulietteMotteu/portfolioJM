@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900");
 @import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700");
 html {
+  width: 100%;
   font-size: 100%;
   font-family: Raleway;
   font-weight: normal; }
@@ -550,7 +551,8 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   #hamMenu {
-    display: block !important; }
+    display: block !important;
+    position: fixed !important; }
 
   nav {
     width: 100%;
@@ -574,4 +576,9 @@ footer {
       display: none; }
 
   h1 {
-    font-size: 50px; } }
+    font-size: 50px !important; }
+
+  h2 {
+    font-size: 18px !important; } }
+
+/*# sourceMappingURL=style.css.map */
