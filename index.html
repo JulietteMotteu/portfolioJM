@@ -47,6 +47,11 @@
 <body>
     <header id="home" class="sectionNav" data-section-name="home">
             <div>
+                
+                <div id="hamMenu" class="tabletShow desktopHidden hamMenu">
+                    <span class="fas fa-bars fa-3x"></span>
+                </div>
+
                 <img src="./img/logo-intro.png" alt="">
                 <div>
                     <h1>Juliette Motteu</h1>
@@ -60,7 +65,7 @@
                 </div>
                 <div class="chevron"></div>
             </div>
-            <nav id="navVerticale">
+            <nav id="navVerticale" class="navigation menuHidden">
                 <ul id="listeNav">
                     <li><a href="#home" class="link">Accueil</a></li>
                     <li><a href="#about" class="link">À propos</a></li>
@@ -135,37 +140,29 @@
                <!-- We Love Lace -->
                 <div class="modalPortfolio" id="weLoveLace" data-iziModal-fullscreen="true"  data-iziModal-title="We Love Lace"  data-iziModal-subtitle="Projet de groupe"  data-iziModal-icon="icon-home"> 
                    
-                    <div>
+                    <div id="modalWll">
+                       
                         <div class="imageModal">
-                            <img src="./img/portfolio/wll-portraits.png" alt="We Love Lace - Portraits">
+                            <img src="./img/portfolio/wll-portraits.jpg" alt="We Love Lace - Portraits">
                         </div>
                         
-                        <div class="infoModal">  
-                            <p>Site web réalisé en groupe ayant comme objectif de sensibiliser et informer sur le rôle et la place des femmes dans l’IT, et encourager l’implication et la visibilité des femmes par le biais d’activités ou d’évènements (workshops/conférences/rencontres).</p>
-                            <p>Nous avons beaucoup travaillé en PHP, pour communiquer avec la base de données mais aussi pour créer un système de session, de like et d'inscription aux événements, combinés avec l'utilisation d'Ajax en JavaScript.</p>
-<!--
-                            <p class="outils"><strong>Outils</strong></p>
-                            <ul>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>Sass</li>
-                                <li>JavaScript</li>
-                                <li>PHP</li>
-                                <li>MySQL</li>
-                                <li>Git</li>
-                                <li>Git</li>
-                                <li>Animate</li>
-                                <li>Illustrator</li>
-                                <li>Photoshop</li>
-                                <li>Adobe XD</li>
-                            </ul>
--->
+                        <div>
+                            <div class="imageModal">
+                                <img src="./img/portfolio/wll-events.jpg" alt="We Love Lace - Evénements">
+                            </div>
+                            
+                            <div class="infoModal">  
+                                <p>Site web réalisé en groupe ayant comme objectif de sensibiliser et informer sur le rôle et la place des femmes dans l’IT, et encourager l’implication et la visibilité des femmes par le biais d’activités ou d’évènements (workshops/conférences/rencontres).</p>
+                                <p>Nous avons beaucoup travaillé en PHP, pour communiquer avec la base de données mais aussi pour créer un système de session, de like et d'inscription aux événements, combinés avec l'utilisation d'Ajax en JavaScript.</p>
                             </div>
                         </div>
+                        
+                            
                     </div>
+                </div>
 
-                <div class="lienPortfolio">
-                    <a href="#" data-izimodal-open="#weLoveLace"><img class="imgPortfolio" src="./img/portfolio/welovelace-thumbnail.jpg" alt=""></a>
+                <div class="lienPortfolio" id="wll">
+                    <a href="#" data-izimodal-open="#weLoveLace"><img class="imgPortfolio" src="./img/portfolio/logo-wll.png" alt=""></a>
                 </div>
                 
                 <!--Robocode-->
@@ -180,7 +177,7 @@
                             <p>Lors d'un hackaton réalisé à Interface3, les étudiants en front-end, back-end et game development se sont réunis autour du thème "Decode &amp; Code.</p>
                             <p>En équipe (3 front-end, 1 back-end, 2 game) nous avons décidé de réaliser un petit jeu, "Robocode", pour apprendre les bases du code de manière ludique. Le but : faire bouger Sparky en complétant un code un trou, à l'aide d'un "drag &amp; drop".</p>
                             
-                            <div id="demo">
+                            <div class="demo">
                                 <a href="https://liviabuttons.github.io/roboCode/">Demo</a>
                             </div>
                         </div>
@@ -194,18 +191,22 @@
                 
                 <!--Sous l'océan-->
                 <div class="modalPortfolio" id="sousOcean" data-iziModal-fullscreen="true"  data-iziModal-title="Sous l'océan"  data-iziModal-subtitle="Projet personnel"  data-iziModal-icon="icon-home">    
-                    
-                    <div class="infoModal">
-                          <p>Premier projet de formation, Sous l'Océan parle de ma passion de la plongée. J'ai surtout voulu mettre en avant les compétences que j'avais acquises en PHP </p>
-                        <p class="outils"><strong>Outils</strong></p>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>PHP</li>
-                            <li>MySQL</li>
-                            <li>jQuery</li>
-                        </ul>
+
+                    <div id="modalOcean">
+                        <div class="imageModal">
+                            <img src="./img/portfolio/souslocean.jpg" alt="Accueil">
+                        </div>
+
+                        <div class="infoModal">
+                              <p>Premier projet de formation, nous avions une semaine pour réaliser un petit site. Sous l'Océan parle de ma passion de la plongée. J'ai eu envie de créer un site où l'on retrouve les différentes espèces sous-marines que l'on peut rencontrer mais également les lieux où faire les plus belles plongées. L'idée était de pouvoir se connecter pour laisser des commentaires.</p>
+                              <p>J'ai surtout voulu mettre en avant les compétences que j'avais en PHP et expérimentez un peu au niveau du CSS et en JavaScript. Ainsi, il est possible de se créer un compte et de se connecter à l'aide d'un système de session.</p>
+                        </div>
+
+                        <div class="imageModal">
+                            <img src="./img/portfolio/wildlife.jpg" alt="Wildlife">
+                        </div>
                     </div>
+
                 </div>
                 
                 <div class="lienPortfolio">
@@ -216,9 +217,6 @@
                 <div class="modalPortfolio" id="portraits" data-iziModal-fullscreen="true"  data-iziModal-title="Portraits pour We Love Lace"  data-iziModal-subtitle="Graphisme"  data-iziModal-icon="icon-home">    
                     
                    <div>
-                        <div class="infoModal">
-                            <p>Pour le projet We Love Lace, j'ai réalisé une série de portraits de femmes pionnères de l'IT. J'ai utilisé les portraits de femmes détourés et travaillés en noir et blanc, ainsi que des éléments graphiques forts dans les 2 couleurs du site (orange et mauve). J'ai réalisé ce travail en Photoshop et Illustrator.</p>
-                        </div>
                         
                         <div id="imagesPortraits">
                             <div class="imageModal">
@@ -226,6 +224,9 @@
                             </div>
                             <div class="imageModal">
                                 <img src="./img/portfolio/johnson.png" alt="">
+                            </div>
+                            <div class="infoModal">
+                                <p>Pour le projet We Love Lace, j'ai réalisé une série de portraits de femmes pionnères de l'IT. J'ai utilisé les portraits de femmes détourés et travaillés en noir et blanc, ainsi que des éléments graphiques forts dans les 2 couleurs du site (orange et mauve). J'ai réalisé ce travail en Photoshop et Illustrator.</p>
                             </div>
                             <div class="imageModal">
                                 <img src="./img/portfolio/fried.png" alt="">
@@ -242,20 +243,52 @@
                 <!--Projet NZ-->
                  <div class="modalPortfolio" id="projetnz" data-iziModal-fullscreen="true"  data-iziModal-title="De l'autre côté de la terre"  data-iziModal-subtitle="Projet personnel"  data-iziModal-icon="icon-home">    
                     
-                   <div>
+                   <div id="modalNZ">
                         <div class="infoModal">
                             <p>Ceci est mon tout premier site web! J'ai voulu créer un site sur la Nouvelle-Zélande où j'ai voyagé pendant 4 mois. Le site est conçu comme une sorte de blog : il y a une série d'articles sur les endroits à visiter que l'on peut commenter. J'ai aussi inclus une section "About" qui explique ce que j'ai fait pendant ces 4 mois, et une section "Connexion" qui permet de se créer un compte et de commenter les articles.</p>
+                        </div>
+                        <div class="imageModal">
+                            <img src="./img/portfolio/projetnz.jpg" alt="">
+                        </div>  
+                        
+                        <div class="imageModal">
+                            <img src="./img/portfolio/lieux.jpg" alt="">
                         </div>
                        
                     </div>
                     
                 </div>
                 <div class="lienPortfolio">
-                    <a href="#" data-izimodal-open="#projetnz"><img src="./img/portfolio/projetNZ.png" alt="Portraits We Love Lace"></a>
+                    <a href="#" data-izimodal-open="#projetnz"><img src="./img/portfolio/projetNZ.png" alt="De l'autre côté de la terre"></a>
                 </div>
-                <div class="lienPortfolio"></div>
+                
+                <!--Ligne du temps WLL-->
+                <div class="modalPortfolio" id="lignetemps" data-iziModal-fullscreen="true"  data-iziModal-title="Circuit informatique pour We Love Lace"  data-iziModal-subtitle="Graphisme"  data-iziModal-icon="icon-home">    
+                    
+                   <div id="circuitWll">
+                        <div class="infoModal">
+                            <p>Pour le site, nous avons travaillé des graphismes de circuits informatiques, voici le graphisme que j'ai réalisé pour la ligne du temps.</p>
+                        </div>
+                        
+                        <div class="imageModal">
+                            <img src="./img/portfolio/ligne-temps.png" alt="">
+                        </div>  
+                        
+                         <div class="infoModal">
+                            <p>J'ai aussi travaillé dans Animate afin de réaliser une animation pour l'accueil du site internet, en donnant l'impression que le circuit se dessine de manière naturelle. Les boutons qui pulsent permettent également de naviguer dans le site, et on peut passer l'intro si on le souhaite pour atterrir sur la page de portrait. Comme le site n'est pas encore hebergé, la demo ne fonctionne que pour l'animation.</p>
+                        </div>
+                        
+                         <div class="demo">
+                            <a href="./accueil.html">Demo</a>
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+                <div class="lienPortfolio">
+                    <a href="#" data-izimodal-open="#lignetemps"><img src="./img/portfolio/circuit-thumbnail.jpg" alt="De l'autre côté de la terre"></a>
+                </div>
             </div>
-            
         </section>
 
         <!--Contact-->
@@ -265,18 +298,22 @@
             <div id="infoContact" data-aos="fade-left">
                 <div>
                     <h4>##<span>Contactez-moi</span>##</h4>
-                    <a href="mailto:juliettemotteu@gmail.com"><img src="./img/add-mail.png" alt=""></i>Envoyez-moi un mail ;-&#41;</a>
+                    <div id="mail">
+                         <a href="mailto:juliettemotteu@gmail.com"><span>Envoyez-moi un mail</span><img src="./img/add-mail.png" alt=""></a>
+                    </div>
                 </div>
                 
-                <div>
+                <div id="cv">
                     <h4>##<span>Lisez-moi</span>##</h4>
                     <a href="./doc/CV Juliette Motteu.pdf">Mon CV</a>
                 </div>
                 
                 <div>
                     <h4>##<span>Suivez-moi</span>##</h4>
-                    <a href="https://github.com/juliette-m"><i class="fab fa-github fa-2x"></i></a>
-                    <a href="https://www.linkedin.com/in/juliette-motteu/"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    <div id="social-media">
+                        <a href="https://github.com/juliette-m"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="https://www.linkedin.com/in/juliette-motteu/"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -284,10 +321,37 @@
     </main>
 
     <footer class="footerJM">
-        <p>Made with love by Juliette Motteu</p>
+        <p>Made with love by Juliette Motteu &copy; 2019</p>
 
     </footer>
     <script>
+
+        
+        document.addEventListener("DOMContentLoaded", function(event) {
+            function toggleMenu(event) {
+                if (!window.matchMedia('(min-width: 769px)').matches) {
+                    // Toggle .mobileHidden
+                    // better: display: none 
+                    nav.classList.toggle('menuHidden');
+
+                    //Change the class of the children of navbutton (AKA the FontAwesome spans) to bars bzw. times(aka cross) to showcase menu open/closed
+                    hamMenu.children[0].classList.toggle('fa-bars');
+                    hamMenu.children[0].classList.toggle('fa-times');
+                }
+            }
+
+            let hamMenu = document.getElementById ('hamMenu');
+            let nav = document.querySelector('nav');
+            var navLinks = document.querySelectorAll ('nav li');
+
+            hamMenu.addEventListener('click', toggleMenu); 
+
+            //Each click on a navigation link triggers the function so the menu closes
+            for (var i = 0; i < navLinks.length; i++) {
+                navLinks[i].addEventListener('click', toggleMenu);
+            }
+        });
+
         
         // Navigation verticale
         function positionNav() {

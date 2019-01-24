@@ -109,6 +109,10 @@ html {
 }
 
 // Nav
+#hamMenu {
+    display: none !important;
+}
+
 img {
     margin: 0;
 }
@@ -211,7 +215,7 @@ h3 {
     }
     div {
         width: 50%;
-        margin-top: 7vh;
+        margin-top: 15vh;
         color: white;
         font-size: 16px;
         line-height: 1.7;
@@ -287,7 +291,7 @@ h3 {
         margin-left: 0vw;
     }
     #graphisme {
-        margin-top: 16vh;
+        margin-top: 20vh;
         margin-right: 10%;
     }
     #code, #graphisme {
@@ -298,7 +302,7 @@ h3 {
         display: flex;
         align-items: center;
         flex-direction: column;
-        text-align: center;
+        text-align: left;
         h4 {
             text-transform: uppercase;
             font-size: 25px;
@@ -315,7 +319,7 @@ h3 {
         li {
             color: white;
             list-style-type: none;
-            font-weight: 500;
+            font-weight: 200;
             margin: 5px 10px 5px 10px;
             font-size: 16px;
             line-height: 1.5;
@@ -365,6 +369,19 @@ h3 {
     }
 }
 
+#wll {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        
+    }
+}
+
 #portfolio::before {
     content: '';
     position: absolute;
@@ -388,6 +405,10 @@ h3 {
     text-align: center !important;
 }
 
+.iziModal-content {
+    font-family: $fontText;
+}
+
 .iziModal-content > div {
     display: -webkit-flex;
     display: -moz-flex;
@@ -398,18 +419,20 @@ h3 {
     align-items: center;
     flex-wrap: wrap;
     padding: 10px !important;
-    margin: 10px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     margin-bottom: 50px !important;
     color: $darkGrey !important;
+    width: 70%;
     .imageModal {
-        width: 70%;
+        width: 100%;
     }
     img {
         max-width: 100%;
         height: auto;
     }
     .infoModal {
-        width: 70%;
+        width: 100%;
         line-height: 1.7;
         margin-top: 40px;
         margin-right: auto;
@@ -418,7 +441,7 @@ h3 {
             text-transform: uppercase;
         }
     }
-    #demo {
+    .demo {
         width: 100%;
         text-align: center;
     }
@@ -440,8 +463,9 @@ h3 {
 
 #portraits {
     .infoModal {
-        width: 70%;
-        margin-top: 0;
+        width: 45%;
+        margin-top: 50px;
+        margin-left: 0;
     }
 }
 
@@ -454,16 +478,72 @@ h3 {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 70%;
+    width: 100%;
     > .imageModal {
         width: 45%;
         margin: 10px;
         img {
             width: 100%;
+            border: 1px solid $mauve;
         }
     }
 }
 
+.iziModal-content > #modalWll {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: no-wrap;
+    align-items: flex-start;
+    > div {
+        width: 45%;
+    }
+    .imageModal {
+        margin-top: 50px;
+        img {
+            border: 1px solid $mauve;
+        }
+    }
+
+    .infoModal {
+        margin: 0;
+        margin-top: 50px;
+    }
+}
+.iziModal-content > #modalOcean {
+    .imageModal {
+        width: 45%;
+        border: 1px solid $mauve;
+        padding: 10px;
+    }
+    .imageModal:first-of-type {
+        width: 100%;
+    }
+}
+
+.iziModal-content > #modalNZ {
+    img {
+        border: 1px solid $mauve;
+        margin-bottom: 50px;
+    }
+    .infoModal {
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+}
+
+#circuitWll {
+    div:first-of-type {
+        margin-top: 20px;
+    }
+    div {
+        margin-bottom: 50px;
+    }
+}
 /* Contact */
 #contact {
     background-color: $darkGreen;
@@ -471,6 +551,7 @@ h3 {
     color: white;
     font-size: 16px;
     line-height: 1.7;
+    position: relative;
     h3 {
         text-align: center;
     }
@@ -478,6 +559,7 @@ h3 {
         margin-top: 5vh;
         font-weight: 200;
         font-size: 25px;
+        margin-bottom: 10px;
     }
     span {
         margin-right: 15px;
@@ -485,15 +567,16 @@ h3 {
         font-weight: 600;
         text-transform: uppercase;
     }
-    img {
-       
-        opacity: 0.7;
-    }
     a {
         color: #fff;
+        font-weight: 200;
+        text-decoration: none;
+        font-size: 16px;
+        text-align: center;
     }
     #infoContact {
         width: 100%;
+        margin-top: 10vh;
         margin-left: auto;
         margin-right: auto;
         display: -webkit-flex;
@@ -505,26 +588,118 @@ h3 {
         justify-content: center;
         align-items: center;
     }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 75%;
+        top: 0;
+        left: 25%;
+        background-color: $lightGreen;
+    }
+    #social-media {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    #mail {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 30px;
+            margin-left: 15px;
+            line-height: 30px;
+            vertical-align: middle;
+        }
+        span {
+            font-weight: 200;
+            font-size: 16px;
+            text-transform: none;
+            line-height: 30px;
+            margin: 0;
+        }
+    }
+    #cv {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
 
 footer {
     width: 92%;
-    height: 20vh;
+    height: 10vh;
     background-color: $darkGreen;
     font-family: $fontText;
+    position: relative;
     p {
         margin: 0;
         text-align: center;
         color: white;
+        font-weight: 200;
+        font-size: 16px;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 250%;
+        bottom: 0;
+        left: 75%;
+        background-color: $lightGreen;
     }
 }
 
 /* Responsive */
 @media (max-width:768px) {
+    #hamMenu {
+        display: block !important;
+    }
+    nav {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .menuHidden {
+        display: none;
+    }
+    
     #listeNav {
         background-color: #fff;
         flex-direction: column;
+        width: 100%;
+        margin: 0;
         li {
+            
         }
+    }
+    #home > div, section, footer {
+        width: 100%;
+        &::before {
+            display: none;
+        }
+        &::after {
+            display: none;
+        }
+    }
+    h1 {
+        font-size: 50px;
     }
 }
