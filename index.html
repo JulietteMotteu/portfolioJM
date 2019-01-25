@@ -376,7 +376,6 @@
             }
         }
         
-        console.log(window.innerWidth);
         positionNav();
 
         window.addEventListener('resize', function(e){
@@ -388,20 +387,42 @@
         
         $(function() {
             // Scrollify
-            $.scrollify({
-                section : ".sectionNav",
-                sectionName : "section-name",
-                standardScrollElements: "#contact",
-                interstitialSection : ".footerJM",
-                afterResize: AOS.refresh,
-                afterRender: AOS.refresh,
+            console.log('hello ' + $(window).width());
+            
+            function scrollIfDesktop() {
+                if($(window).width() > 769) {
+                    $.scrollify({
+                        section : ".sectionNav",
+                        sectionName : "section-name",
+                        standardScrollElements: "#contact",
+                        interstitialSection : ".footerJM",
+                        afterResize: AOS.refresh,
+                        afterRender: AOS.refresh,
+                        touchScroll: false
+                    });
+                    $('.link').click(function(e){
+                        e.preventDefault();
+                        var moveTo = $(this).attr('href');
+                        $.scrollify.move(moveTo);
+                        console.log(moveTo);
+                    });
+                }
+                else {
+                    $('.link').click(function(e){
+                        e.preventDefault();
+                    });
+                    $.scrollify.destroy();
+                }
+            }
+            
+            /*On lance la fonction Scrollify*/
+            scrollIfDesktop();
+            /*Scrollify s'active ou pas au redimensionnement de la fenêtre*/
+            $(window).on('resize', function () {
+                console.log("resize");
+                scrollIfDesktop();
             });
-            $('.link').click(function(e){
-                e.preventDefault();
-                var moveTo = $(this).attr('href');
-                $.scrollify.move(moveTo);
-                console.log(moveTo);
-            });
+                         
             // Typetype
             var typed = new Typed('.typed', {
                 stringsElement: '.typed-strings',

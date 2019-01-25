@@ -10,6 +10,9 @@ html {
 * {
   box-sizing: border-box; }
 
+body {
+  overflow-x: hidden; }
+
 #home {
   display: flex;
   justify-content: space-between; }
@@ -21,7 +24,7 @@ html {
   width: 92%;
   color: white;
   position: relative; }
-  #home > div > div {
+  #home > div > div:nth-of-type(2) {
     z-index: 99;
     width: 100%;
     margin-left: auto;
@@ -33,7 +36,7 @@ html {
     align-items: center;
     padding: 20px;
     font-family: Raleway; }
-    #home > div > div h1 {
+    #home > div > div:nth-of-type(2) h1 {
       font-weight: 400;
       margin-top: 0;
       margin-bottom: 3vh;
@@ -43,7 +46,7 @@ html {
       text-indent: 5px;
       padding: 0;
       text-align: center; }
-    #home > div > div h2 {
+    #home > div > div:nth-of-type(2) h2 {
       display: inline-block;
       font-size: 1.6vw;
       text-transform: uppercase;
@@ -51,7 +54,7 @@ html {
       letter-spacing: 21px;
       text-align: center;
       text-indent: 15px; }
-      #home > div > div h2 div {
+      #home > div > div:nth-of-type(2) h2 div {
         margin: 0; }
 @keyframes blink {
   0% {
@@ -60,9 +63,9 @@ html {
     opacity: 1; }
   100% {
     opacity: 0; } }
-    #home > div > div .typed {
+    #home > div > div:nth-of-type(2) .typed {
       display: inline-block; }
-    #home > div > div .typed-cursor {
+    #home > div > div:nth-of-type(2) .typed-cursor {
       animation: blink 0.7s infinite;
       letter-spacing: 0;
       text-indent: 0; }
@@ -194,6 +197,7 @@ h3 {
 #skills {
   background-image: url("../img/graphic2.png"), url("../img/bracket.png"), url("../img/bracket-right.png");
   background-size: 37%, 4%, 4%;
+  background-size: 50vh, 4%, 4%;
   background-position: 105% 120%, 7% 65%, 32% 65%;
   background-repeat: no-repeat;
   background-color: #2a590c;
@@ -293,7 +297,8 @@ h3 {
       width: 100%;
       height: auto; }
     #portfolio #portfolioItems h3 {
-      margin-top: 0; }
+      margin-top: 0;
+      text-align: center; }
     #portfolio #portfolioItems .lienPortfolio {
       overflow: hidden;
       width: 300px;
@@ -458,7 +463,8 @@ h3 {
     margin-top: 5vh;
     font-weight: 200;
     font-size: 25px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    text-align: center; }
   #contact span {
     margin-right: 15px;
     margin-left: 15px;
@@ -555,7 +561,10 @@ footer {
 @media (max-width: 768px) {
   #hamMenu {
     display: block !important;
-    position: fixed !important; }
+    position: fixed !important;
+    z-index: 999;
+    position: relative;
+    right: 20px; }
 
   nav {
     width: 100%;
@@ -565,11 +574,20 @@ footer {
   .menuHidden {
     display: none; }
 
-  #listeNav {
-    background-color: #fff;
-    flex-direction: column;
+  #navVerticale {
+    background-color: #94a627;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0; }
+
+  #listeNav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0; }
+    #listeNav li a {
+      font-size: 25px !important; }
 
   #home > div, section, footer {
     width: 100%; }
@@ -582,4 +600,18 @@ footer {
     font-size: 50px !important; }
 
   h2 {
-    font-size: 18px !important; } }
+    font-size: 18px !important; }
+
+  #skills {
+    background-position: 80% 80%, 33% 50%, 65% 50%;
+    /* background-size: 20vh;*/ }
+
+  #skills > div {
+    flex-direction: column;
+    align-items: center; }
+    #skills > div #code, #skills > div #graphisme {
+      margin: 0; }
+
+  footer {
+    padding-top: 50px;
+    padding-bottom: 50px; } }

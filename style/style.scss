@@ -21,6 +21,10 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 // Header
 #home {
     display: flex;
@@ -34,7 +38,7 @@ html {
     width: 92%;
     color: white;
     position: relative;
-    > div {
+    > div:nth-of-type(2) {
         z-index: 99;
         width: 100%;
         margin-left: auto;
@@ -243,6 +247,7 @@ h3 {
 #skills {
     background-image: url("../img/graphic2.png"), url("../img/bracket.png"), url("../img/bracket-right.png");
     background-size: 37%, 4%, 4%;
+    background-size: 50vh, 4%, 4%;
     background-position: 105% 120%, 7% 65%, 32% 65%;
     background-repeat: no-repeat;
     background-color: $darkGreen;
@@ -356,6 +361,7 @@ h3 {
         }
         h3 {
             margin-top: 0;
+            text-align: center;
         }
         .lienPortfolio {
             overflow: hidden;
@@ -562,6 +568,7 @@ h3 {
         font-weight: 200;
         font-size: 25px;
         margin-bottom: 10px;
+        text-align: center;
     }
     span {
         margin-right: 15px;
@@ -674,6 +681,9 @@ footer {
     #hamMenu {
         display: block !important;
         position: fixed !important;
+        z-index: 999;
+        position: relative;
+        right: 20px;
     }
     nav {
         width: 100%;
@@ -684,13 +694,21 @@ footer {
         display: none;
     }
     
-    #listeNav {
-        background-color: #fff;
-        flex-direction: column;
+    #navVerticale {
+        background-color: $lightGreen;
         width: 100%;
         margin: 0;
-        li {
-            
+        padding: 0;
+        top: 0;
+    }
+    
+    #listeNav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        li a {
+            font-size: 25px !important;
         }
     }
     #home > div, section, footer {
@@ -707,5 +725,20 @@ footer {
     }
     h2 {
         font-size: 18px !important;
+    }
+    #skills {
+        background-position: 80% 80%, 33% 50%, 65% 50%;
+       /* background-size: 20vh;*/
+    }
+    #skills > div {
+        flex-direction: column;
+        align-items: center;
+        #code, #graphisme {
+            margin: 0;
+        }
+    }
+    footer {
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 }
