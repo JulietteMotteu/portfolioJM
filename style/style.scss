@@ -367,6 +367,10 @@ h3 {
         .modalPortfolio {
             display: none;
         }
+        a {
+            width: 100%;
+            height: auto;
+        }
     }
 }
 
@@ -378,9 +382,6 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    img {
-        
-    }
 }
 
 #portfolio::before {

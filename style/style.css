@@ -302,6 +302,9 @@ h3 {
       margin: 10px; }
     #portfolio #portfolioItems .modalPortfolio {
       display: none; }
+    #portfolio #portfolioItems a {
+      width: 100%;
+      height: auto; }
 
 #wll {
   display: -webkit-flex;
@@ -580,5 +583,3 @@ footer {
 
   h2 {
     font-size: 18px !important; } }
-
-/*# sourceMappingURL=style.css.map */
