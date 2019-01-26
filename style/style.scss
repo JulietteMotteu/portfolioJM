@@ -200,8 +200,8 @@ h3 {
 #about {
     background-color: $mauve;
     background-image: url("../img/arrow-left.png"), url("../img/arrow-right.png");
-    background-size: 37%, 37%;
-    background-position: 0 10vh, 96% 95%;
+    background-size: 15%, 15%;
+    background-position: 10% 15vh, 90% 95%;
     background-repeat: no-repeat;
     position: relative;
     &::before {
@@ -222,6 +222,9 @@ h3 {
         color: white;
         font-size: 16px;
         line-height: 1.7;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
         p {
             margin-top: 5vh;
             font-weight: 200;
@@ -247,7 +250,6 @@ h3 {
 //    background-size: 37%, 4%, 4%;
     background-size: 400px, 50px, 50px;
     background-position: 100% 120%, 6% 50%, 35% 50%;
-    
     background-repeat: no-repeat;
     background-color: $darkGreen;
     position: relative;
@@ -256,6 +258,11 @@ h3 {
         margin-top: 15vh;
         position: relative;
         color: white;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
     }
         &::after {
             z-index: -1;
@@ -346,17 +353,17 @@ h3 {
     padding-bottom: 50px;
     color: white;
     #portfolioItems {
-//        display: -webkit-flex;
-//        display: -moz-flex;
-//        display: -ms-flex;
-//        display: -o-flex;
-//        display: flex;
-//        flex-wrap: wrap;
-//        width: 90%;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
         margin-top: 13vh;
-//        margin-left: auto;
-//        margin-right: auto;
-//        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
         .imgPortfolio {
             width: 100%;
             height: auto;
@@ -370,7 +377,7 @@ h3 {
             width: 300px;
             height: 200px;
             background-color: #fff;
-            margin: 10px;
+            margin: 5px;
         }
         .modalPortfolio {
             display: none;
@@ -505,7 +512,6 @@ h3 {
 /* Contact */
 #contact {
     background-color: $darkGreen;
-    color: #fff;
     color: white;
     font-size: 16px;
     line-height: 1.7;
@@ -517,7 +523,7 @@ h3 {
         margin-top: 5vh;
         font-weight: 200;
         font-size: 25px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         text-align: center;
     }
     span {
@@ -532,20 +538,13 @@ h3 {
         text-decoration: none;
         font-size: 16px;
         text-align: center;
+        margin-bottom: 10px;
     }
     #infoContact {
         width: 100%;
         margin-top: 10vh;
         margin-left: auto;
         margin-right: auto;
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
     &::before {
         content: '';
@@ -619,7 +618,7 @@ footer {
         content: '';
         position: absolute;
         width: 12px;
-        height: 250%;
+        height: 300%;
         bottom: 0;
         left: 75%;
         background-color: $lightGreen;
@@ -631,7 +630,7 @@ footer {
     #hamMenu {
         display: block !important;
         position: fixed !important;
-        z-index: 999;
+        z-index: 9999;
         position: relative;
         right: 20px;
     }
@@ -663,6 +662,7 @@ footer {
     }
     #home > div, section, footer {
         width: 100%;
+        padding-bottom: 50px;
         &::before {
             display: none;
         }
@@ -672,15 +672,26 @@ footer {
     }
     h1 {
         font-size: 50px !important;
+        margin-bottom: 0;
     }
     h2 {
         font-size: 18px !important;
+    }
+    #about {
+        background-position: 5% 5%, 90% 95%;
+        background-size: 120px, 120px;
+        padding-bottom: 170px;
+        .aboutDiv {
+            margin-top: 85px;
+            width: 80%;
+        }
     }
     #skills {
         background-position: 100% 125%, 15% 35%, 85% 35%;
         background-size: 400px, 80px, 80px;
     }
     #skills > div {
+        flex-direction: column;
         #code, #graphisme {
             margin-left: auto;
             margin-right: auto;
