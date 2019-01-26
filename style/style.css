@@ -13,6 +13,10 @@ html {
 body {
   overflow-x: hidden; }
 
+.col-centered {
+  float: none;
+  margin: 0 auto; }
+
 #home {
   display: flex;
   justify-content: space-between; }
@@ -157,13 +161,6 @@ h3 {
   background-size: 37%, 37%;
   background-position: 0 10vh, 96% 95%;
   background-repeat: no-repeat;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: relative; }
   #about::before {
     content: '';
@@ -175,56 +172,37 @@ h3 {
     background-color: #bb97d6; }
   #about h3 {
     color: white; }
-  #about div {
-    width: 50%;
+  #about .aboutDiv {
     margin-top: 15vh;
+    margin-bottom: 5vh;
     color: white;
     font-size: 16px;
     line-height: 1.7; }
-    #about div p {
+    #about .aboutDiv p {
       margin-top: 5vh;
       font-weight: 200; }
-    #about div #stage {
+    #about .aboutDiv #stage {
       font-size: 25px; }
-    #about div span {
+    #about .aboutDiv span {
       margin-right: 15px;
       margin-left: 15px; }
-    #about div strong {
+    #about .aboutDiv strong {
       font-weight: 600;
       text-transform: uppercase; }
 
 /* Section skills */
 #skills {
   background-image: url("../img/graphic2.png"), url("../img/bracket.png"), url("../img/bracket-right.png");
-  background-size: 37%, 4%, 4%;
-  background-size: 50vh, 4%, 4%;
-  background-position: 105% 120%, 7% 65%, 32% 65%;
+  background-size: 400px, 50px, 50px;
+  background-position: 100% 120%, 6% 50%, 35% 50%;
   background-repeat: no-repeat;
   background-color: #2a590c;
   position: relative;
   z-index: 0; }
-  #skills > div {
+  #skills .skillsDiv {
     margin-top: 15vh;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    justify-content: space-around;
     position: relative;
-    align-items: flex-start;
     color: white; }
-  #skills::before {
-    position: absolute;
-    content: '';
-    width: 12px;
-    height: 40%;
-    bottom: 10%;
-    right: 20%;
-    background-color: #94a627; }
   #skills::after {
     z-index: -1;
     position: absolute;
@@ -235,15 +213,24 @@ h3 {
     left: 0;
     background-color: #94a627; }
   #skills h3 {
-    position: relative;
     color: white;
     z-index: 9999; }
   #skills #code {
-    margin-top: -7vh;
+    margin-top: 0vh;
     margin-left: 0vw; }
   #skills #graphisme {
     margin-top: 20vh;
-    margin-right: 10%; }
+    margin-left: 5vw;
+    position: relative; }
+    #skills #graphisme::after {
+      position: absolute;
+      content: '';
+      width: 12px;
+      height: 120%;
+      bottom: -10%;
+      right: 5vw;
+      background-color: #94a627;
+      z-index: -1; }
   #skills #code, #skills #graphisme {
     display: -webkit-flex;
     display: -moz-flex;
@@ -256,7 +243,12 @@ h3 {
     #skills #code h4, #skills #graphisme h4 {
       text-transform: uppercase;
       font-size: 25px;
-      font-weight: 200; }
+      font-weight: 200;
+      margin-bottom: 5vh;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      display: inline-block; }
       #skills #code h4 span, #skills #graphisme h4 span {
         font-weight: 600;
         margin-left: 15px;
@@ -270,6 +262,11 @@ h3 {
       margin: 5px 10px 5px 10px;
       font-size: 16px;
       line-height: 1.5; }
+      #skills #code li span, #skills #graphisme li span {
+        padding-left: 10px; }
+        #skills #code li span::before, #skills #graphisme li span::before {
+          content: '-';
+          padding-right: 10px; }
 
 /* Section portfolio */
 #portfolio {
@@ -345,36 +342,24 @@ h3 {
   font-family: Raleway; }
 
 .iziModal-content > div {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
   padding: 10px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-bottom: 50px !important;
-  color: #424242 !important;
-  width: 70%; }
-  .iziModal-content > div .imageModal {
-    width: 100%; }
+  color: #424242 !important; }
   .iziModal-content > div img {
     max-width: 100%;
-    height: auto; }
+    height: auto;
+    border: 1px solid #8132bc;
+    padding: 0; }
+  .iziModal-content > div .imageModal {
+    margin-top: 25px;
+    margin-bottom: 25px; }
   .iziModal-content > div .infoModal {
-    width: 100%;
     line-height: 1.7;
-    margin-top: 40px;
-    margin-right: auto;
-    margin-left: auto; }
-    .iziModal-content > div .infoModal strong {
-      text-transform: uppercase; }
+    margin-top: 25px;
+    padding-bottom: 25px; }
   .iziModal-content > div .demo {
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 25px; }
   .iziModal-content > div a {
     display: inline-block;
     color: #8132bc;
@@ -387,67 +372,39 @@ h3 {
       color: #fff;
       background-color: #8132bc;
       transition: 0.5s; }
+  .iziModal-content > div ul {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 0; }
+  .iziModal-content > div li {
+    list-style-type: none;
+    padding-right: 15px; }
 
-#portraits .infoModal {
-  width: 45%;
-  margin-top: 50px;
-  margin-left: 0; }
+#roboModal {
+  margin-top: 0;
+  margin-bottom: 0; }
+  #roboModal .imageModal {
+    margin-top: 10px; }
+  #roboModal img {
+    border: none; }
 
 #imagesPortraits {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%; }
-  #imagesPortraits > .imageModal {
-    width: 45%;
-    margin: 10px; }
-    #imagesPortraits > .imageModal img {
-      width: 100%;
-      border: 1px solid #8132bc; }
+  margin-bottom: 0px; }
 
 .iziModal-content > #modalWll {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: no-wrap;
-  align-items: flex-start; }
-  .iziModal-content > #modalWll > div {
-    width: 45%; }
-  .iziModal-content > #modalWll .imageModal {
-    margin-top: 50px; }
-    .iziModal-content > #modalWll .imageModal img {
-      border: 1px solid #8132bc; }
-  .iziModal-content > #modalWll .infoModal {
-    margin: 0;
-    margin-top: 50px; }
+  padding-bottom: 50px;
+  width: 80%; }
 
-.iziModal-content > #modalOcean .imageModal {
-  width: 45%;
-  border: 1px solid #8132bc;
-  padding: 10px; }
-.iziModal-content > #modalOcean .imageModal:first-of-type {
-  width: 100%; }
+.iziModal-content > #modalOcean img {
+  border: none; }
 
-.iziModal-content > #modalNZ img {
-  border: 1px solid #8132bc;
-  margin-bottom: 50px; }
-.iziModal-content > #modalNZ .infoModal {
-  margin-top: 20px;
-  margin-bottom: 50px; }
-
-#circuitWll div:first-of-type {
-  margin-top: 20px; }
-#circuitWll div {
-  margin-bottom: 50px; }
+#circuitWll img {
+  border: none; }
 
 /* Contact */
 #contact {
@@ -575,7 +532,7 @@ footer {
     display: none; }
 
   #navVerticale {
-    background-color: #94a627;
+    background-color: #fff;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -603,15 +560,24 @@ footer {
     font-size: 18px !important; }
 
   #skills {
-    background-position: 80% 80%, 33% 50%, 65% 50%;
-    /* background-size: 20vh;*/ }
+    background-position: 100% 125%, 15% 35%, 85% 35%;
+    background-size: 400px, 80px, 80px; }
 
-  #skills > div {
-    flex-direction: column;
-    align-items: center; }
-    #skills > div #code, #skills > div #graphisme {
-      margin: 0; }
+  #skills > div #code, #skills > div #graphisme {
+    margin-left: auto;
+    margin-right: auto; }
+  #skills > div #graphisme {
+    margin-bottom: 50px;
+    margin-top: 70px; }
+    #skills > div #graphisme::after {
+      display: none; }
+
+  #portfolio {
+    background-size: 300px;
+    background-position: 100% 0%; }
 
   footer {
     padding-top: 50px;
     padding-bottom: 50px; } }
+
+/*# sourceMappingURL=style.css.map */

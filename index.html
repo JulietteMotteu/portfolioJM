@@ -11,6 +11,9 @@
     <!--Normalize-->
     <link rel="stylesheet" href="./style/normalize.css">
     
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
     <!--Izimodal-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.css" />
 
@@ -29,6 +32,9 @@
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
+    
+    <!--Bootstrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
     <!--Typed-->
     <script src="js/typed.js"></script>
@@ -82,48 +88,48 @@
        
         <section id="about" class="sectionNav" data-section-name="about">
            
-               <h3>À propos</h3>
-                
-                <div data-aos="fade-right">  
+            <div class="container">
+                <h3>À propos</h3>
+
+                <div data-aos="fade-right" class="col-sm-6 col-xs-10 col-sm-offset-3 col-xs-offset-1 aboutDiv">  
                     <p id="stage">##<span><strong>À la recherche d'un stage</strong></span>##</p>
 
                     <p>Jeune front-end developeuse, je me suis découvert une passion pour le monde du web et la programmation grâce à ma formation à Interface3. C'est après une expérience variée que je me suis tournée vers la programmation et plus particulièrement le développement front-end : en effet, cela me permet de combiner ma créativité, ma logique et mon insatiable envie d'apprendre!</p>
 
                     <p>Aujourd'hui j'ai envie de m'investir dans une structure où je pourrai "toucher à tout": programmer en PHP et JavaScript, coder en HTML et CSS et utiliser les outils graphiques Adobe.</p>
                 </div>
+            </div>
         </section>
         
         <section id="skills" class="sectionNav" data-section-name="skills">
-            <h3>Compétences</h3>
-            
-            <div>
-                <div id="code" data-aos="fade-right">
-                    <h4>##<span>Code</span>##</h4>
-                    <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
-                        <li>Node.js</li>
-                        <li>jQuery</li>
-                        <li>PHP</li>
-                        <li>SQL</li>
-                        <li>Bootstrap</li>
-                        <li>Wordpress</li>
-                        <li>Drupal</li>
-                        <li>Sass</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
+            <div class="container">
+                <h3>Compétences</h3>
                 
-                <div id="graphisme" data-aos="fade-left">
-                    <h4>##<span>Graphisme</span>##</h4>
-                    <ul>
-                        <li>Photoshop</li>
-                        <li>Illustrator</li>
-                        <li>InDesign</li>
-                        <li>Animate</li>
-                        <li>Adobe XD</li>
-                    </ul>
+                <div class="skillsDiv" class="col-xs-12">
+                    <div id="code" data-aos="fade-right" class="col-sm-5 col-xs-12 col-sm-offset-0">
+                        <h4>##<span>Web dev</span>##</h4>
+                        <ul>
+                            <li>HTML5<span>CSS3</span><span>Sass</span></li>
+                            <li>JavaScript<span>jQuery</span></li>
+                            <li>AJAX<span>Node.js</span></li>
+                            <li>PHP<span>SQL</span></li>
+                            <li>Bootstrap</li>
+                            <li>Wordpress<span>Drupal</span></li>
+                            <li>Git<span>Github</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div id="graphisme" data-aos="fade-left" class="col-sm-5 col-xs-12 col-sm-offset-0">
+                        <h4>##<span>Graphisme</span>##</h4>
+                        <ul>
+                            <li>Photoshop</li>
+                            <li>Illustrator</li>
+                            <li>InDesign</li>
+                            <li>Animate</li>
+                            <li>XD</li>
+                            <li>Prototyping<span>Mockup</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             
@@ -131,161 +137,197 @@
 
         <section id="portfolio" class="sectionNav" data-section-name="portfolio">
            
-            <div data-aos="fade-left">
-                <h3>Portfolio</h3>
-            </div>
-           
-            <div id="portfolioItems">
-                    
-               <!-- We Love Lace -->
-                <div class="modalPortfolio" id="weLoveLace" data-iziModal-fullscreen="true"  data-iziModal-title="We Love Lace"  data-iziModal-subtitle="Projet de groupe"  data-iziModal-icon="icon-home"> 
-                   
-                    <div id="modalWll">
-                       
-                        <div class="imageModal">
-                            <img src="./img/portfolio/wll-portraits.jpg" alt="We Love Lace - Portraits">
-                        </div>
+            <div class="container">
+                <div data-aos="fade-left">
+                    <h3>Portfolio</h3>
+                </div>
+                           
+                <div id="portfolioItems">
                         
-                        <div>
-                            <div class="imageModal">
+                   <!-- We Love Lace -->
+                    <div class="modalPortfolio" id="weLoveLace" data-iziModal-fullscreen="true"  data-iziModal-title="We Love Lace"  data-iziModal-subtitle="Projet de groupe"  data-iziModal-icon="icon-home"> 
+                       
+                        <div id="modalWll col-centered">
+                           
+                            <div class="infoModal col-sm-10 col-xs-12 col-sm-offset-1">  
+                                <p>Site web réalisé en groupe ayant comme objectif de sensibiliser et informer sur le rôle et la place des femmes dans l’IT, et encourager l’implication et la visibilité des femmes par le biais d’activités ou d’évènements (workshops, conférences, rencontres).</p>
+                                <p>Nous avons beaucoup travaillé en PHP, pour communiquer avec la base de données mais aussi pour créer un système de session, de like et d'inscription aux événements, combinés avec l'utilisation d'Ajax en JavaScript.</p>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>Sass</li>
+                                    <li>JavaScript</li>
+                                    <li>jQuery</li>
+                                    <li>PHP</li>
+                                    <li>AJAX</li>
+                                    <li>Git</li>
+                                    <li>Github</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="imageModal col-sm-6 col-xs-12">
+                                <img src="./img/portfolio/wll-portraits.jpg" alt="We Love Lace - Portraits">
+                            </div>
+                          
+                            <div class="imageModal col-sm-6 col-xs-12">
                                 <img src="./img/portfolio/wll-events.jpg" alt="We Love Lace - Evénements">
                             </div>
                             
-                            <div class="infoModal">  
-                                <p>Site web réalisé en groupe ayant comme objectif de sensibiliser et informer sur le rôle et la place des femmes dans l’IT, et encourager l’implication et la visibilité des femmes par le biais d’activités ou d’évènements (workshops/conférences/rencontres).</p>
-                                <p>Nous avons beaucoup travaillé en PHP, pour communiquer avec la base de données mais aussi pour créer un système de session, de like et d'inscription aux événements, combinés avec l'utilisation d'Ajax en JavaScript.</p>
-                            </div>
                         </div>
-                        
                     </div>
-                </div>
-
-                <div class="lienPortfolio" id="wll">
-                    <a href="#" data-izimodal-open="#weLoveLace"><img class="imgPortfolio" src="./img/portfolio/logo-wll.png" alt=""></a>
-                </div>
                 
-                <!--Robocode-->
-                <div class="modalPortfolio" id="robocode" data-iziModal-fullscreen="true"  data-iziModal-title="Robocode"  data-iziModal-subtitle="Hackaton"  data-iziModal-icon="icon-home">
+                    <div class="lienPortfolio" id="wll">
+                        <a href="#" data-izimodal-open="#weLoveLace"><img class="imgPortfolio" src="./img/portfolio/logo-wll.png" alt=""></a>
+                    </div>
                     
-                    <div>
-                        <div class="imageModal">
-                            <img src="./img/portfolio/robocode2.jpg" alt="Robocode">
-                        </div>
+                    <!--Robocode-->
+                    <div class="modalPortfolio" id="robocode" data-iziModal-fullscreen="true"  data-iziModal-title="Robocode"  data-iziModal-subtitle="Hackaton"  data-iziModal-icon="icon-home">
                         
-                        <div class="infoModal">
-                            <p>Lors d'un hackaton réalisé à Interface3, les étudiants en front-end, back-end et game development se sont réunis autour du thème "Decode &amp; Code.</p>
-                            <p>En équipe (3 front-end, 1 back-end, 2 game) nous avons décidé de réaliser un petit jeu, "Robocode", pour apprendre les bases du code de manière ludique. Le but : faire bouger Sparky en complétant un code un trou, à l'aide d'un "drag &amp; drop".</p>
+                        <div id="roboModal" class="col-md-9 col-centered">
                             
-                            <div class="demo">
-                                <a href="https://liviabuttons.github.io/roboCode/">Demo</a>
+                            <div class="imageModal col-xs-12">
+                                <img src="./img/portfolio/robocode2.jpg" alt="Robocode">
+                            </div>
+                            <div class="infoModal col-xs-12">
+                                <p>Lors d'un hackaton réalisé à Interface3, les étudiants en front-end, back-end et game development se sont réunis autour du thème "Decode &amp; Code.</p>
+                                <p>En équipe (3 front-end, 1 back-end, 2 game) nous avons décidé de réaliser un petit jeu, "Robocode", pour apprendre les bases du code de manière ludique. Le but : faire bouger Sparky en complétant un code à trou, à l'aide d'un "drag &amp; drop".</p>
+                                
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS3</li>
+                                    <li>JavaScript</li>
+                                    <li>jQuery</li>
+                                    <li>Git</li>
+                                    <li>Github</li>
+                                </ul>
+                                
+                                <div class="demo">
+                                    <a href="https://liviabuttons.github.io/roboCode/">Demo</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="lienPortfolio">
-                    <a href="#" data-izimodal-open="#robocode"><img src="./img/portfolio/robocode-thumbnail.jpg" alt=""></a>
-                </div>
-                
-                <!--Sous l'océan-->
-                <div class="modalPortfolio" id="sousOcean" data-iziModal-fullscreen="true"  data-iziModal-title="Sous l'océan"  data-iziModal-subtitle="Projet personnel"  data-iziModal-icon="icon-home">    
-
-                    <div id="modalOcean">
-                        <div class="imageModal">
-                            <img src="./img/portfolio/souslocean.jpg" alt="Accueil">
-                        </div>
-
-                        <div class="infoModal">
-                              <p>Premier projet de formation, nous avions une semaine pour réaliser un petit site. Sous l'Océan parle de ma passion de la plongée. J'ai eu envie de créer un site où l'on retrouve les différentes espèces sous-marines que l'on peut rencontrer mais également les lieux où faire les plus belles plongées. L'idée était de pouvoir se connecter pour laisser des commentaires.</p>
-                              <p>J'ai surtout voulu mettre en avant les compétences que j'avais en PHP et expérimentez un peu au niveau du CSS et en JavaScript. Ainsi, il est possible de se créer un compte et de se connecter à l'aide d'un système de session.</p>
-                        </div>
-
-                        <div class="imageModal">
-                            <img src="./img/portfolio/wildlife.jpg" alt="Wildlife">
-                        </div>
-                    </div>
-
-                </div>
-                
-                <div class="lienPortfolio">
-                    <a href="#" data-izimodal-open="#sousOcean"><img src="./img/portfolio/sousocean-thumbnail.png" alt=""></a>
-                </div>
-                
-                <!--Portraits WLL-->
-                <div class="modalPortfolio" id="portraits" data-iziModal-fullscreen="true"  data-iziModal-title="Portraits pour We Love Lace"  data-iziModal-subtitle="Graphisme"  data-iziModal-icon="icon-home">    
-                    
-                   <div>
                         
-                        <div id="imagesPortraits">
-                            <div class="imageModal">
+                    </div>
+                    
+                    <div class="lienPortfolio">
+                        <a href="#" data-izimodal-open="#robocode"><img src="./img/portfolio/robocode-thumbnail.jpg" alt=""></a>
+                    </div>
+                    
+                    <!--Sous l'océan-->
+                    <div class="modalPortfolio" id="sousOcean" data-iziModal-fullscreen="true"  data-iziModal-title="Sous l'océan"  data-iziModal-subtitle="Projet personnel"  data-iziModal-icon="icon-home">    
+                
+                        <div id="modalOcean" class="col-md-9 col-centered">
+                           
+                            <div class="infoModal col-xs-12">
+                                  <p>Premier projet de formation, nous avions une semaine pour réaliser un petit site. Sous l'Océan parle de ma passion de la plongée. J'ai eu envie de créer un site où l'on retrouve les différentes espèces sous-marines que l'on peut rencontrer mais également les lieux où faire les plus belles plongées. L'idée était de pouvoir se connecter pour laisser des commentaires.</p>
+                                  <p>J'ai surtout voulu mettre en avant les compétences que j'avais en PHP et expérimentez un peu au niveau du CSS et en JavaScript. Ainsi, il est possible de se créer un compte et de se connecter à l'aide d'un système de session.</p>
+                                  
+                                  <ul>
+                                      <li>HTML5</li>
+                                      <li>CSS3</li>
+                                      <li>PHP</li>
+                                      <li>MySQL</li>
+                                      <li>jQuery</li>
+                                      <li>JavaScript</li>
+                                  </ul>
+                            </div>
+                            <div class="imageModal col-xs-12 col-sm-6">
+                                <img src="./img/portfolio/souslocean.jpg" alt="Accueil">
+                            </div>
+                
+                            <div class="imageModal col-xs-12 col-sm-6">
+                                <img src="./img/portfolio/wildlife.jpg" alt="Wildlife">
+                            </div>
+                        </div>
+                
+                    </div>
+                    
+                    <div class="lienPortfolio">
+                        <a href="#" data-izimodal-open="#sousOcean"><img src="./img/portfolio/sousocean-thumbnail.png" alt=""></a>
+                    </div>
+                    
+                    <!--Portraits WLL-->
+                    <div class="modalPortfolio" id="portraits" data-iziModal-fullscreen="true"  data-iziModal-title="Portraits pour We Love Lace"  data-iziModal-subtitle="Graphisme"  data-iziModal-icon="icon-home">
+                            
+                        <div id="imagesPortraits" class="col-md-9 col-centered">
+                            <div class="imageModal col-xs-12 col-sm-6">
                                 <img src="./img/portfolio/keller.png" alt="">
                             </div>
-                            <div class="imageModal">
+                            <div class="imageModal col-xs-12 col-sm-6">
                                 <img src="./img/portfolio/johnson.png" alt="">
                             </div>
-                            <div class="infoModal">
-                                <p>Pour le projet We Love Lace, j'ai réalisé une série de portraits de femmes pionnères de l'IT. J'ai utilisé les portraits de femmes détourés et travaillés en noir et blanc, ainsi que des éléments graphiques forts dans les 2 couleurs du site (orange et mauve). J'ai réalisé ce travail en Photoshop et Illustrator.</p>
+                            <div class="infoModal col-xs-12">
+                                <p>Pour le projet We Love Lace, j'ai réalisé une série de portraits de femmes pionnères de l'IT. J'ai utilisé les portraits de femmes détourés et travaillés en noir et blanc, ainsi que des éléments graphiques forts dans les 2 couleurs du site (orange et mauve).</p>
+                                <ul>
+                                    <li>Photoshop</li>
+                                    <li>Illustrator</li>
+                                </ul>
                             </div>
-                            <div class="imageModal">
+                            <div class="imageModal col-sm-8 col-centered">
                                 <img src="./img/portfolio/fried.png" alt="">
                             </div>
                         </div>
+                        
                     </div>
                     
-                </div>
-                
-                <div class="lienPortfolio">
-                     <a href="#" data-izimodal-open="#portraits"><img src="./img/portfolio/portrait-thumbnail.png" alt="Portraits We Love Lace"></a>
-                </div>
-                
-                <!--Projet NZ-->
-                 <div class="modalPortfolio" id="projetnz" data-iziModal-fullscreen="true"  data-iziModal-title="De l'autre côté de la terre"  data-iziModal-subtitle="Projet personnel"  data-iziModal-icon="icon-home">    
-                    
-                   <div id="modalNZ">
-                        <div class="infoModal">
-                            <p>Ceci est mon tout premier site web! J'ai voulu créer un site sur la Nouvelle-Zélande où j'ai voyagé pendant 4 mois. Le site est conçu comme une sorte de blog : il y a une série d'articles sur les endroits à visiter que l'on peut commenter. J'ai aussi inclus une section "About" qui explique ce que j'ai fait pendant ces 4 mois, et une section "Connexion" qui permet de se créer un compte et de commenter les articles.</p>
-                        </div>
-                        <div class="imageModal">
-                            <img src="./img/portfolio/projetnz.jpg" alt="">
-                        </div>  
-                        
-                        <div class="imageModal">
-                            <img src="./img/portfolio/lieux.jpg" alt="">
-                        </div>
-                       
+                    <div class="lienPortfolio">
+                         <a href="#" data-izimodal-open="#portraits"><img src="./img/portfolio/portrait-thumbnail.png" alt="Portraits We Love Lace"></a>
                     </div>
                     
-                </div>
-                <div class="lienPortfolio">
-                    <a href="#" data-izimodal-open="#projetnz"><img src="./img/portfolio/projetNZ.png" alt="De l'autre côté de la terre"></a>
-                </div>
-                
-                <!--Ligne du temps WLL-->
-                <div class="modalPortfolio" id="lignetemps" data-iziModal-fullscreen="true"  data-iziModal-title="Circuit informatique pour We Love Lace"  data-iziModal-subtitle="Graphisme"  data-iziModal-icon="icon-home">    
-                    
-                   <div id="circuitWll">
-                        <div class="infoModal">
-                            <p>Pour le site, nous avons travaillé des graphismes de circuits informatiques, voici le graphisme que j'ai réalisé pour la ligne du temps.</p>
+                    <!--Projet NZ-->
+                     <div class="modalPortfolio" id="projetnz" data-iziModal-fullscreen="true"  data-iziModal-title="De l'autre côté de la terre"  data-iziModal-subtitle="Projet personnel"  data-iziModal-icon="icon-home">    
+                        
+                       <div id="modalNZ" class="col-md-9 col-centered">
+                            <div class="infoModal col-xs-12">
+                                <p>Ceci est mon tout premier site web! J'ai voulu créer un site sur la Nouvelle-Zélande où j'ai voyagé pendant 4 mois. Le site est conçu comme une sorte de blog : il y a une série d'articles sur les endroits à visiter que l'on peut commenter. J'ai aussi inclus une section "About" qui explique ce que j'ai fait pendant ces 4 mois, et une section "Connexion" qui permet de se créer un compte et de commenter les articles.</p>
+                                 <ul>
+                                      <li>HTML5</li>
+                                      <li>CSS3</li>
+                                      <li>PHP</li>
+                                      <li>MySQL</li>
+                                  </ul>
+                            </div>
+                            <div class="imageModal col-xs-12">
+                                <img src="./img/portfolio/projetnz.jpg" alt="">
+                            </div>  
+                            
+                            <div class="imageModal col-xs-12">
+                                <img src="./img/portfolio/lieux.jpg" alt="">
+                            </div>
+                           
                         </div>
                         
-                        <div class="imageModal">
-                            <img src="./img/portfolio/ligne-temps.png" alt="">
-                        </div>  
-                        
-                         <div class="infoModal">
-                            <p>J'ai aussi travaillé dans Animate afin de réaliser une animation pour l'accueil du site internet, en donnant l'impression que le circuit se dessine de manière naturelle. Les boutons qui pulsent permettent également de naviguer dans le site, et on peut passer l'intro si on le souhaite pour atterrir sur la page de portrait. Comme le site n'est pas encore hebergé, la demo ne fonctionne que pour l'animation.</p>
-                        </div>
-                        
-                         <div class="demo">
-                            <a href="./accueil.html">Demo</a>
-                        </div>
-                       
+                    </div>
+                    <div class="lienPortfolio">
+                        <a href="#" data-izimodal-open="#projetnz"><img src="./img/portfolio/projetNZ.png" alt="De l'autre côté de la terre"></a>
                     </div>
                     
-                </div>
-                <div class="lienPortfolio">
-                    <a href="#" data-izimodal-open="#lignetemps"><img src="./img/portfolio/circuit-thumbnail.jpg" alt="De l'autre côté de la terre"></a>
+                    <!--Ligne du temps WLL-->
+                    <div class="modalPortfolio" id="lignetemps" data-iziModal-fullscreen="true"  data-iziModal-title="Circuit informatique pour We Love Lace"  data-iziModal-subtitle="Graphisme"  data-iziModal-icon="icon-home">    
+                        
+                       <div id="circuitWll" class="col-md-9 col-centered">
+                            <div class="infoModal col-xs-12">
+                                <p>Pour le site, nous avons travaillé des graphismes de circuits informatiques, voici le graphisme que j'ai réalisé pour la ligne du temps.</p>
+                            </div>
+                            
+                            <div class="imageModal col-xs-12">
+                                <img src="./img/portfolio/ligne-temps.png" alt="">
+                            </div>  
+                            
+                             <div class="infoModal col-xs-12">
+                                <p>J'ai aussi travaillé dans Animate afin de réaliser une animation pour l'accueil du site internet, en donnant l'impression que le circuit se dessine de manière naturelle. Les boutons qui pulsent permettent également de naviguer dans le site, et on peut passer l'intro si on le souhaite pour atterrir sur la page de portrait. Comme le site n'est pas encore hebergé, la demo ne fonctionne que pour l'animation.</p>
+                            </div>
+                            
+                             <div class="demo">
+                                <a href="./accueil.html">Demo</a>
+                            </div>
+                           
+                        </div>
+                        
+                    </div>
+                    <div class="lienPortfolio">
+                        <a href="#" data-izimodal-open="#lignetemps"><img src="./img/portfolio/circuit-thumbnail.jpg" alt="De l'autre côté de la terre"></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -390,7 +432,7 @@
             console.log('hello ' + $(window).width());
             
             function scrollIfDesktop() {
-                if($(window).width() > 769) {
+                if($(window).width() >= 768) {
                     $.scrollify({
                         section : ".sectionNav",
                         sectionName : "section-name",
@@ -440,7 +482,7 @@
                 width: "100%",
                 onOpened: function() {
                     $.scrollify.disable();
-                    $(".modalPortfolio").html().css('display', 'block');
+//                    $(".modalPortfolio").html.css('display', 'block');
                 },
                 onClosing: function() {
                     $.scrollify.enable();

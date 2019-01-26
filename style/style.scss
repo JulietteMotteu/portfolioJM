@@ -25,6 +25,11 @@ body {
     overflow-x: hidden;
 }
 
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
 // Header
 #home {
     display: flex;
@@ -198,13 +203,6 @@ h3 {
     background-size: 37%, 37%;
     background-position: 0 10vh, 96% 95%;
     background-repeat: no-repeat;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
     &::before {
         content: '';
@@ -218,9 +216,9 @@ h3 {
     h3 {
         color: white;
     }
-    div {
-        width: 50%;
+    .aboutDiv {
         margin-top: 15vh;
+        margin-bottom: 5vh;
         color: white;
         font-size: 16px;
         line-height: 1.7;
@@ -246,37 +244,19 @@ h3 {
 /* Section skills */
 #skills {
     background-image: url("../img/graphic2.png"), url("../img/bracket.png"), url("../img/bracket-right.png");
-    background-size: 37%, 4%, 4%;
-    background-size: 50vh, 4%, 4%;
-    background-position: 105% 120%, 7% 65%, 32% 65%;
+//    background-size: 37%, 4%, 4%;
+    background-size: 400px, 50px, 50px;
+    background-position: 100% 120%, 6% 50%, 35% 50%;
+    
     background-repeat: no-repeat;
     background-color: $darkGreen;
     position: relative;
     z-index: 0;
-    > div {
+    .skillsDiv {
         margin-top: 15vh;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: flex;
-        justify-content: space-around;
         position: relative;
-        align-items: flex-start; 
         color: white;
     }
-       &::before {
-            position: absolute;
-            content: '';
-            width: 12px;
-            height: 40%;
-            bottom: 10%;
-            right: 20%;
-            background-color: $lightGreen;
-        }
         &::after {
             z-index: -1;
             position: absolute;
@@ -288,17 +268,27 @@ h3 {
             background-color: $lightGreen;
         }
     h3 {
-        position: relative;
         color: white;
         z-index: 9999;
     }
     #code {
-        margin-top: -7vh;
+        margin-top: 0vh;
         margin-left: 0vw;
     }
     #graphisme {
         margin-top: 20vh;
-        margin-right: 10%;
+        margin-left: 5vw;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: '';
+            width: 12px;
+            height: 120%;
+            bottom: -10%;
+            right: 5vw;
+            background-color: $lightGreen;
+            z-index: -1;
+        }
     }
     #code, #graphisme {
         display: -webkit-flex;
@@ -313,6 +303,11 @@ h3 {
             text-transform: uppercase;
             font-size: 25px;
             font-weight: 200;
+            margin-bottom: 5vh;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            display: inline-block;
             span {
                 font-weight: 600;
                 margin-left: 15px;
@@ -329,6 +324,13 @@ h3 {
             margin: 5px 10px 5px 10px;
             font-size: 16px;
             line-height: 1.5;
+            span {
+                padding-left: 10px;
+                &::before {
+                    content: '-';
+                    padding-right: 10px;
+                }
+            }
         }
     }
 }
@@ -418,40 +420,27 @@ h3 {
 }
 
 .iziModal-content > div {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
     padding: 10px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-bottom: 50px !important;
     color: $darkGrey !important;
-    width: 70%;
-    .imageModal {
-        width: 100%;
-    }
     img {
         max-width: 100%;
         height: auto;
+        border: 1px solid $mauve;
+        padding: 0;
+    }
+    .imageModal {
+        margin-top: 25px;
+        margin-bottom: 25px;
     }
     .infoModal {
-        width: 100%;
         line-height: 1.7;
-        margin-top: 40px;
-        margin-right: auto;
-        margin-left: auto;
-        strong {
-            text-transform: uppercase;
-        }
+        margin-top: 25px;
+        padding-bottom: 25px;
     }
     .demo {
         width: 100%;
         text-align: center;
+        margin-bottom: 25px;
     }
     a {
         display: inline-block;
@@ -467,89 +456,50 @@ h3 {
             transition: 0.5s;
         }
     }
+    ul {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding-left: 0;
+    }
+    li {
+        list-style-type: none;
+        padding-right: 15px;
+    }
 }
 
-#portraits {
-    .infoModal {
-        width: 45%;
-        margin-top: 50px;
-        margin-left: 0;
+#roboModal {
+    margin-top: 0;
+    margin-bottom: 0;
+    .imageModal {
+        margin-top: 10px;
+    }
+    img {
+        border: none;
     }
 }
 
 #imagesPortraits {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    > .imageModal {
-        width: 45%;
-        margin: 10px;
-        img {
-            width: 100%;
-            border: 1px solid $mauve;
-        }
-    }
+    margin-bottom: 0px;
 }
 
 .iziModal-content > #modalWll {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: no-wrap;
-    align-items: flex-start;
-    > div {
-        width: 45%;
-    }
-    .imageModal {
-        margin-top: 50px;
-        img {
-            border: 1px solid $mauve;
-        }
-    }
-
-    .infoModal {
-        margin: 0;
-        margin-top: 50px;
-    }
+    padding-bottom: 50px;
+    width: 80%;
 }
 .iziModal-content > #modalOcean {
-    .imageModal {
-        width: 45%;
-        border: 1px solid $mauve;
-        padding: 10px;
-    }
-    .imageModal:first-of-type {
-        width: 100%;
-    }
-}
-
-.iziModal-content > #modalNZ {
     img {
-        border: 1px solid $mauve;
-        margin-bottom: 50px;
-    }
-    .infoModal {
-        margin-top: 20px;
-        margin-bottom: 50px;
+        border: none;
     }
 }
 
 #circuitWll {
-    div:first-of-type {
-        margin-top: 20px;
-    }
-    div {
-        margin-bottom: 50px;
+    img {
+        border: none;
     }
 }
 /* Contact */
@@ -695,7 +645,7 @@ footer {
     }
     
     #navVerticale {
-        background-color: $lightGreen;
+        background-color: #fff;
         width: 100%;
         margin: 0;
         padding: 0;
@@ -727,15 +677,26 @@ footer {
         font-size: 18px !important;
     }
     #skills {
-        background-position: 80% 80%, 33% 50%, 65% 50%;
-       /* background-size: 20vh;*/
+        background-position: 100% 125%, 15% 35%, 85% 35%;
+        background-size: 400px, 80px, 80px;
     }
     #skills > div {
-        flex-direction: column;
-        align-items: center;
         #code, #graphisme {
-            margin: 0;
+            margin-left: auto;
+            margin-right: auto;
         }
+        #graphisme {
+            margin-bottom: 50px;
+            margin-top: 70px;
+            &::after {
+                display: none;
+            }
+        }
+    }
+    
+    #portfolio {
+        background-size: 300px;
+        background-position: 100% 0%;
     }
     footer {
         padding-top: 50px;
