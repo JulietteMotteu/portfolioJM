@@ -73,9 +73,9 @@
             </div>
             <nav id="navVerticale" class="navigation menuHidden">
                 <ul id="listeNav">
-                    <li><a href="#home" class="link">Accueil</a></li>
-                    <li><a href="#about" class="link">À propos</a></li>
-                    <li><a href="#skills" class="link">Compétences</a></li>
+                    <li><a href="#home" class="link">Home</a></li>
+                    <li><a href="#about" class="link">About</a></li>
+                    <li><a href="#skills" class="link">Skills</a></li>
                     <li><a href="#portfolio" class="link">Portfolio</a></li>
                     <li><a href="#contact" class="link">Contact</a></li>
                 </ul>
@@ -87,7 +87,7 @@
     <main>
        
         <section id="about" class="sectionNav" data-section-name="about">
-            <h3>À propos</h3>
+            <h3>About</h3>
 
             <div data-aos="fade-right" class="aboutDiv">  
                 <p id="stage">##<span><strong>À la recherche d'un stage</strong></span>##</p>
@@ -99,7 +99,7 @@
         </section>
         
         <section id="skills" class="sectionNav" data-section-name="skills">
-            <h3>Compétences</h3>
+            <h3>Skills</h3>
 
             <div class="skillsDiv">
                 <div id="code" data-aos="fade-right" class="col-sm-5 col-xs-12 col-sm-offset-0">
@@ -112,11 +112,12 @@
                         <li>Bootstrap</li>
                         <li>Wordpress<span>Drupal</span></li>
                         <li>Git<span>Github</span></li>
+                        <li>Responsive web design</li>
                     </ul>
                 </div>
 
                 <div id="graphisme" data-aos="fade-left" class="col-sm-5 col-xs-12 col-sm-offset-0">
-                    <h4>##<span>Graphisme</span>##</h4>
+                    <h4>##<span>Design</span>##</h4>
                     <ul>
                         <li>Photoshop</li>
                         <li>Illustrator</li>
@@ -333,7 +334,7 @@
             <div class="container">
                 <h3>Contact</h3>
                 
-                <div id="infoContact" data-aos="fade-left" class="col-xs-12">
+                <div id="infoContact" data-aos="fade-left" >
                     <div>
                         <h4>##<span>Contactez-moi</span>##</h4>
                         <div id="mail">
@@ -365,7 +366,7 @@
     </footer>
     <script>
 
-        
+        console.log(window.innerWidth);
       
         function toggleMenu(event) {
             if (!window.matchMedia('(min-width: 769px)').matches) {
@@ -389,8 +390,6 @@
         for (var i = 0; i < navLinks.length; i++) {
             navLinks[i].addEventListener('click', toggleMenu);
         }
-       
-
         
         // Navigation verticale
         function positionNav() {
@@ -399,20 +398,12 @@
             let hauteurNav = navVerticale.offsetHeight;
             let lien = navVerticale.getElementsByTagName('li');
 
-            if (hauteurFenetre > hauteurNav && largeurFenetre > 768) {
-                listeNav.style.flexDirection = "column";
+            if (largeurFenetre > 768) {
+//                listeNav.style.flexDirection = "column";
                 navVerticale.style.top = (hauteurFenetre - hauteurNav)/2 + "px";
-                console.log(navVerticale.style.top);
-                for (let i=0; i<lien.length; i++) {
-                    lien[i].style.writingMode = "vertical-rl";
-                }
-            }
-            else {
-                navVerticale.style.top = "20px";
-                for (let i=0; i<lien.length; i++) {
-                    lien[i].style.writingMode = "horizontal-tb";
-                }
-                console.log(hauteurFenetre);
+//                for (let i=0; i<lien.length; i++) {
+//                    lien[i].style.writingMode = "vertical-rl";
+//                }
             }
         }
         
@@ -421,14 +412,9 @@
         window.addEventListener('resize', function(e){
             positionNav();
         }); 
-    
-        
-        
         
         $(function() {
             // Scrollify
-            console.log('hello ' + $(window).width());
-            
             function scrollIfDesktop() {
                 if($(window).width() > 768) {
                     $.scrollify({
@@ -448,9 +434,6 @@
                     });
                 }
                 else {
-                    $('.link').click(function(e){
-                        e.preventDefault();
-                    });
                     $.scrollify.destroy();
                 }
             }
@@ -459,7 +442,6 @@
             scrollIfDesktop();
             /*Scrollify s'active ou pas au redimensionnement de la fenêtre*/
             $(window).on('resize', function () {
-                console.log("resize");
                 scrollIfDesktop();
             });
                          

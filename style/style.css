@@ -5,7 +5,8 @@ html {
   width: 100%;
   font-size: 100%;
   font-family: Raleway;
-  font-weight: normal; }
+  font-weight: normal;
+  overflow-x: hidden; }
 
 * {
   box-sizing: border-box; }
@@ -119,7 +120,7 @@ img {
         height: 20px;
         color: #8132bc;
         font-weight: 500;
-        font-size: 2vh;
+        font-size: 15px;
         text-decoration: none;
         text-transform: uppercase;
         position: relative; }
@@ -222,7 +223,7 @@ h3 {
     background-color: #94a627; }
   #skills h3 {
     color: white;
-    z-index: 9999; }
+    z-index: 999; }
   #skills #code {
     margin-top: 0vh;
     margin-left: 0vw; }
@@ -443,7 +444,7 @@ h3 {
     margin-bottom: 10px; }
   #contact #infoContact {
     width: 100%;
-    margin-top: 10vh;
+    margin-top: 15vh;
     margin-left: auto;
     margin-right: auto; }
   #contact::before {
@@ -516,12 +517,25 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+  section {
+    min-height: 100vh; }
+
   #hamMenu {
-    display: block !important;
+    top: 0;
+    left: 0;
+    background-color: #2a590c !important;
+    width: 100%;
+    height: 50px;
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
     position: fixed !important;
-    z-index: 9999;
+    z-index: 999;
     position: relative;
-    right: 20px; }
+    right: 20px;
+    padding-right: 15px; }
+    #hamMenu span {
+      text-align: center; }
 
   nav {
     width: 100%;
@@ -532,6 +546,9 @@ footer {
     display: none; }
 
   #navVerticale {
+    z-index: 9999;
+    top: 50px !important;
+    right: 0;
     background-color: #fff;
     width: 100%;
     margin: 0;
@@ -541,10 +558,18 @@ footer {
   #listeNav {
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     margin: 0; }
+    #listeNav li {
+      writing-mode: horizontal-tb !important; }
     #listeNav li a {
-      font-size: 25px !important; }
+      font-size: 20px !important;
+      text-transform: none !important; }
+    #listeNav a:hover {
+      background-size: 0% 0% !important; }
+    #listeNav a:hover::before {
+      height: 0 !important;
+      width: 0 !important; }
 
   #home > div, section, footer {
     width: 100%;
@@ -570,7 +595,7 @@ footer {
       width: 80%; }
 
   #skills {
-    background-position: 100% 125%, 15% 35%, 85% 35%;
+    background-position: 100% 125%, 15% 34%, 85% 34%;
     background-size: 400px, 80px, 80px; }
 
   #skills > div {
@@ -588,8 +613,26 @@ footer {
     background-size: 300px;
     background-position: 100% 0%; }
 
+  #contact {
+    min-height: 85vh; }
+
   footer {
     padding-top: 50px;
-    padding-bottom: 50px; } }
+    padding-bottom: 50px;
+    min-height: 15vh; } }
+@media (max-width: 520px) {
+  #about {
+    background-position: 3% 4%, 90% 95%;
+    background-size: 80px;
+    padding-bottom: 150px; }
+    #about .aboutDiv {
+      margin-top: 100px; }
+
+  #skills {
+    background-position: 160% 100%, 5% 35%, 95% 35%;
+    background-size: 300px, 50px, 50px; }
+
+  #portfolio {
+    background-position: 45vw 5vh; } }
 
 /*# sourceMappingURL=style.css.map */
