@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Juliette Motteu</title>
+    <title>Juliette Motteu | Junior Front-End Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="_AAmz95nHHCvvqVUM19mTiqIuvVzKMFu54lkw5EDeZs" />
     
     <!--LIENS FEUILLES DE STYLE-->
     <!--Normalize-->
@@ -48,6 +49,10 @@
     <!--AOS-->
     <script src="./js/aos.js"></script>
     
+    <!--FAVICON-->
+    <link rel="icon" type="x-icon" sizes="48x48" href="img/favicon/favicon.ico">
+
+
 </head>
 
 <body>
@@ -55,10 +60,18 @@
             <div>
                 
                 <div id="hamMenu" class="tabletShow desktopHidden hamMenu">
-                    <span class="fas fa-bars fa-3x"></span>
+                   <!-- <span class="fas fa-bars fa-3x"></span>-->
+                    <div id="nav-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
 
-                <img src="./img/logo-intro.png" alt="">
+                <img src="./img/logo/logo-intro.png" alt="">
                 <div>
                     <h1>Juliette Motteu</h1>
           
@@ -99,33 +112,36 @@
         </section>
         
         <section id="skills" class="sectionNav" data-section-name="skills">
-            <h3>Skills</h3>
-
-            <div class="skillsDiv">
-                <div id="code" data-aos="fade-right" class="col-sm-5 col-xs-12 col-sm-offset-0">
-                    <h4>##<span>Web dev</span>##</h4>
-                    <ul>
-                        <li>HTML5<span>CSS3</span><span>Sass</span></li>
-                        <li>JavaScript<span>jQuery</span></li>
-                        <li>AJAX<span>Node.js</span></li>
-                        <li>PHP<span>SQL</span></li>
-                        <li>Bootstrap</li>
-                        <li>Wordpress<span>Drupal</span></li>
-                        <li>Git<span>Github</span></li>
-                        <li>Responsive web design</li>
-                    </ul>
-                </div>
-
-                <div id="graphisme" data-aos="fade-left" class="col-sm-5 col-xs-12 col-sm-offset-0">
-                    <h4>##<span>Design</span>##</h4>
-                    <ul>
-                        <li>Photoshop</li>
-                        <li>Illustrator</li>
-                        <li>InDesign</li>
-                        <li>Animate</li>
-                        <li>XD</li>
-                        <li>Prototyping<span>Mockup</span></li>
-                    </ul>
+            
+            <div class="container">
+                <h3>Skills</h3>
+                
+                <div class="skillsDiv">
+                    <div id="code" data-aos="fade-right" class="col-sm-5 col-xs-12 col-sm-offset-0">
+                        <h4>##<span>Web dev</span>##</h4>
+                        <ul>
+                            <li>HTML5<span>CSS3</span><span>Sass</span></li>
+                            <li>Responsive web design</li>
+                            <li>JavaScript<span>jQuery</span></li>
+                            <li>AJAX<span>Node.js</span><span>JSON</span></li>
+                            <li>PHP<span>SQL</span></li>
+                            <li>Bootstrap</li>
+                            <li>Wordpress<span>Drupal</span></li>
+                            <li>Git<span>Github</span></li>
+                        </ul>
+                    </div>
+                
+                    <div id="graphisme" data-aos="fade-left" class="col-sm-5 col-xs-12 col-sm-offset-0">
+                        <h4>##<span>Design</span>##</h4>
+                        <ul>
+                            <li>Photoshop</li>
+                            <li>Illustrator</li>
+                            <li>InDesign</li>
+                            <li>Animate</li>
+                            <li>XD</li>
+                            <li>Prototyping<span>Mockup</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             
@@ -338,7 +354,7 @@
                     <div>
                         <h4>##<span>Contactez-moi</span>##</h4>
                         <div id="mail">
-                             <a href="mailto:juliettemotteu@gmail.com"><span>Envoyez-moi un mail</span><img src="./img/add-mail.png" alt=""></a>
+                             <a href="mailto:juliettemotteu@gmail.com"><span>Envoyez-moi un mail</span><img src="./img/design/add-mail.png" alt=""></a>
                         </div>
                     </div>
                     
@@ -365,26 +381,20 @@
 
     </footer>
     <script>
-
-        console.log(window.innerWidth);
       
         function toggleMenu(event) {
             if (!window.matchMedia('(min-width: 769px)').matches) {
                 // Toggle .mobileHidden
                 // better: display: none 
                 nav.classList.toggle('menuHidden');
-
-                //Change the class of the children of navbutton (AKA the FontAwesome spans) to bars bzw. times(aka cross) to showcase menu open/closed
-                hamMenu.children[0].classList.toggle('fa-bars');
-                hamMenu.children[0].classList.toggle('fa-times');
             }
         }
 
-        let hamMenu = document.getElementById ('hamMenu');
+        let navIcon = document.getElementById ('nav-icon');
         let nav = document.querySelector('nav');
         var navLinks = document.querySelectorAll ('nav li');
 
-        hamMenu.addEventListener('click', toggleMenu); 
+        navIcon.addEventListener('click', toggleMenu); 
 
         //Each click on a navigation link triggers the function so the menu closes
         for (var i = 0; i < navLinks.length; i++) {
@@ -399,11 +409,7 @@
             let lien = navVerticale.getElementsByTagName('li');
 
             if (largeurFenetre > 768) {
-//                listeNav.style.flexDirection = "column";
                 navVerticale.style.top = (hauteurFenetre - hauteurNav)/2 + "px";
-//                for (let i=0; i<lien.length; i++) {
-//                    lien[i].style.writingMode = "vertical-rl";
-//                }
             }
         }
         
@@ -414,6 +420,11 @@
         }); 
         
         $(function() {
+            // Anim hamburger
+            $('#nav-icon, .link').click(function(){
+                $('#nav-icon').toggleClass('open');
+            });
+            
             // Scrollify
             function scrollIfDesktop() {
                 if($(window).width() > 768) {
