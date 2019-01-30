@@ -284,14 +284,20 @@ h3 {
 
 /* Section skills */
 #skills {
-  background-image: url("../img/design/graphic2.png"), url("../img/design/bracket.png"), url("../img/design/bracket-right.png");
-  background-size: 400px, 50px, 50px;
-  background-position: 100% 120%, 8% 40vh, 38% 40vh;
+  background-image: url("../img/design/graphic2.png");
+  background-size: 400px;
+  background-position: 100% 120%;
   background-repeat: no-repeat;
   background-color: #2a590c;
   position: relative;
   z-index: 0; }
   #skills .skillsDiv {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: row;
     margin-top: 15vh;
     position: relative;
     color: white; }
@@ -308,8 +314,12 @@ h3 {
     color: white;
     z-index: 999; }
   #skills #code {
+    background-image: url("../img/design/bracket.png"), url("../img/design/bracket-right.png");
+    background-size: 50px, 50px;
+    background-position: 10% 10vh, 90% 10vh;
+    background-repeat: no-repeat;
     margin-top: 0vh;
-    margin-left: 0vw; }
+    margin-left: 10vw; }
   #skills #graphisme {
     margin-top: 20vh;
     margin-left: 5vw;
@@ -324,6 +334,7 @@ h3 {
       background-color: #94a627;
       z-index: -1; }
   #skills #code, #skills #graphisme {
+    width: 40%;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -692,20 +703,23 @@ footer {
       margin-top: 130px;
       width: 80%; }
 
-  #skills {
-    background-position: 100% 125%, 15% 34%, 85% 34%;
-    background-size: 400px, 80px, 80px; }
-
-  #skills > div {
-    flex-direction: column; }
-    #skills > div #code, #skills > div #graphisme {
-      margin-left: auto;
-      margin-right: auto; }
-    #skills > div #graphisme {
-      margin-bottom: 50px;
-      margin-top: 70px; }
-      #skills > div #graphisme::after {
-        display: none; }
+  #skills .skillsDiv {
+    flex-direction: column !important;
+    align-items: center !important;
+    background-position: 100% 125%;
+    background-size: 400px; }
+  #skills #code, #skills #graphisme {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 80%; }
+  #skills #code {
+    background-position: 0% 34%, 100% 34% !important;
+    background-size: 80px, 80px !important; }
+  #skills #graphisme {
+    margin-bottom: 50px;
+    margin-top: 50px; }
+    #skills #graphisme::after {
+      display: none; }
 
   .iziModal-content {
     min-height: 100vh; }
@@ -730,8 +744,13 @@ footer {
       margin-top: 100px; }
 
   #skills {
-    background-position: 160% 100%, 5% 35%, 95% 35%;
-    background-size: 300px, 50px, 50px; }
+    background-position: 160% 100%;
+    background-size: 300px; }
+    #skills #code, #skills #graphisme {
+      width: 100%; }
+    #skills #code {
+      background-position: 5% 35%, 95% 35% !important;
+      background-size: 50px, 50px !important; }
 
   #portfolio {
     background-position: 45vw 5vh; } }
