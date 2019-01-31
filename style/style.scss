@@ -355,7 +355,7 @@ h3 {
 #skills {
     background-image: url("../img/design/graphic2.png");
     background-size: 400px;
-    background-position: 100% 120%;
+    background-position: 105% 110%;
     background-repeat: no-repeat;
     background-color: $darkGreen;
     position: relative;
@@ -391,11 +391,12 @@ h3 {
         background-position: 10% 10vh, 90% 10vh;
         background-repeat: no-repeat;
         margin-top: 0vh;
-        margin-left: 10vw;
+        margin-left: 8vw;
     }
     #graphisme {
         margin-top: 20vh;
-        margin-left: 5vw;
+        margin-left: 0vw;
+        margin-right: 3vw;
         position: relative;
         &::after {
             position: absolute;
@@ -446,7 +447,8 @@ h3 {
             span {
                 padding-left: 10px;
                 &::before {
-                    content: '-';
+                    content: '|';
+                    font-weight: 500;
                     padding-right: 10px;
                 }
             }

@@ -286,7 +286,7 @@ h3 {
 #skills {
   background-image: url("../img/design/graphic2.png");
   background-size: 400px;
-  background-position: 100% 120%;
+  background-position: 105% 110%;
   background-repeat: no-repeat;
   background-color: #2a590c;
   position: relative;
@@ -319,10 +319,11 @@ h3 {
     background-position: 10% 10vh, 90% 10vh;
     background-repeat: no-repeat;
     margin-top: 0vh;
-    margin-left: 10vw; }
+    margin-left: 8vw; }
   #skills #graphisme {
     margin-top: 20vh;
-    margin-left: 5vw;
+    margin-left: 0vw;
+    margin-right: 3vw;
     position: relative; }
     #skills #graphisme::after {
       position: absolute;
@@ -368,7 +369,8 @@ h3 {
       #skills #code li span, #skills #graphisme li span {
         padding-left: 10px; }
         #skills #code li span::before, #skills #graphisme li span::before {
-          content: '-';
+          content: '|';
+          font-weight: 500;
           padding-right: 10px; }
 
 /* Section portfolio */
