@@ -306,7 +306,7 @@ h3 {
 /* Section about */
 #about {
     background-color: $mauve;
-    background-image: url("../img/design/arrow-left.png"), url("../img/design/arrow-right.png");
+    background-image: url("../assets/img/design/arrow-left.png"), url("../assets/img/design/arrow-right.png");
     background-size: 15%, 15%;
     background-position: 10% 15vh, 90% 95%;
     background-repeat: no-repeat;
@@ -353,7 +353,7 @@ h3 {
 
 /* Section skills */
 #skills {
-    background-image: url("../img/design/graphic2.png");
+    background-image: url("../assets/img/design/graphic.png");
     background-size: 400px;
     background-position: 105% 110%;
     background-repeat: no-repeat;
@@ -386,7 +386,7 @@ h3 {
         z-index: 999;
     }
     #code {
-        background-image: url("../img/design/bracket.png"), url("../img/design/bracket-right.png");
+        background-image: url("../assets/img/design/bracket-left.png"), url("../assets/img/design/bracket-right.png");
         background-size: 50px, 50px;
         background-position: 10% 10vh, 90% 10vh;
         background-repeat: no-repeat;
@@ -459,7 +459,7 @@ h3 {
 /* Section portfolio */
 #portfolio {
     background-color: $mauve;
-    background-image: url(../img/design/paint-portfolio.png);
+    background-image: url(../assets/img/design/paint-portfolio.png);
     background-size: 30%;
     background-repeat: no-repeat;
     background-position: 90vh -10vh;
