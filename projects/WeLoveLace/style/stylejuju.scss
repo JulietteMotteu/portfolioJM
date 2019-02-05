@@ -1,0 +1,1390 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900');
+
+$orangeColor: #ea5920;
+$mauveColor: #6a397c;
+$greyColor: #4d4d4d;
+$textFont: 'Raleway';
+$bg-body: #f9f9f9;
+$primary-color: $orangeColor;
+$secondary-color: $mauveColor;
+
+
+
+
+// Timeline
+$timeline-color: $primary-color;
+
+%font { font-family : $textFont; }
+%bouton { border-radius: 4px; padding: 10px 15px 10px 15px;}
+%boutonInfo { border-radius: 4px; padding: 10px 15px 10px 15px; color: #fff; background-color: $mauveColor; border: 1px solid; }
+%section { 
+    width: 80%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px; }
+%input { border-radius: 4px; padding: 10px 15px 10px 15px; border: 1px solid $mauveColor;}
+%rond {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top:100%;
+    left: -13px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+    border: 2px solid $orangeColor;
+}
+
+// Mixins and Placeholders Timeline
+%clearfix {
+	&:after, &:before {
+		content: '';
+		display: block;
+		width: 100%;
+		clear: both;
+	}
+}
+
+@mixin prefix($prop, $val) {
+	@each $prefix in '-webkit-', '-moz-', '-ms-', '' {
+		#{$prefix}#{$prop}: $val;
+	}
+}
+
+* {
+    box-sizing: border-box;
+    @extend %font;
+    
+}
+
+h2 {
+    font-family: Raleway;
+    color: $orangeColor;
+    font-weight: 600;
+}
+// HEADER
+#headerTop {
+    @extend %section;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    #logo {
+        width: 200px;
+        margin-top: 25px;
+    }
+    #leftLinks {
+        a {
+            text-decoration: none;
+            color: $greyColor;
+            font-weight: 500;
+            font-size: 12px;
+        }
+        a:nth-of-type(2)::before {
+            content : "|";
+            padding: 10px;
+            position: relative;
+            left: -2px;
+        }
+        a:nth-of-type(3) {
+            margin-left: 50px;
+            margin-right: 0;
+            background-color: $orangeColor;
+            @extend %bouton;
+            color: #fff;
+            i {
+                padding-left: 10px;
+                color: #fff;
+                i {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+}
+
+#welcomePseudo {
+    font-weight: 600;
+    font-size: 15px;
+    color: $greyColor;
+    position: relative;
+    right: 8px;
+}
+
+#top {
+    position: fixed; 
+    bottom: 4%;         
+    width: 50px;
+    right : 0;
+    i {
+        color: $mauveColor; 
+        font-size: 30px;
+    }
+            
+}
+
+// NAVIGATION
+#logoMobile {
+    display: none;
+}
+
+nav {
+    @extend %section;
+    #navigationMenu {
+        display: flex;
+        justify-content: flex-end;
+        @extend %font;
+        li {
+            list-style-type: none;
+            padding: 10px;
+            a {
+                padding-bottom: 30px;
+                text-transform: uppercase;
+                color: $greyColor;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: none;
+            }
+        }
+    }
+    #ligneNav {
+        position: absolute;
+        right: 22px;
+        width: 0;
+        height: 2px;
+        background-color: $mauveColor;
+        opacity: 0;
+    }
+    #ligneNav::before {
+        content: '';
+        display: inline-block;
+        position: relative;
+        top: -10px;
+        left: -22px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        color: white;
+        border: 2px solid $mauveColor;
+    }
+}
+
+
+// Timeline
+#portraitSection {
+	@extend %section;
+}
+
+.project-name {
+  text-align: center;
+  padding: 10px 0;
+}
+
+#timeline {
+    background-image: url(../img/portraits/ligneTemps.svg), url(..//img/portraits/ligneTemps.svg), url(..//img/portraits/ligneTemps.svg), url(..//img/portraits/ligneTemps.svg);
+    background-repeat: no-repeat;
+    background-position: 48% 0, 48.1% 150rem, 48.2% 300rem, 48.3% 450rem;
+    background-size: 265px, 265px, 265px, 265px;
+    width: 100%;
+    margin: 30px auto;
+    margin-bottom: 0;
+    position: relative;
+	@include prefix(transition, all .4s ease);
+
+	&:after {
+		content: "";
+		clear: both;
+		display: table;
+		width: 100%;
+	}
+	
+	.timeline-item {
+		margin-bottom: 50px;
+		position: relative;
+		@extend %clearfix;
+        
+		.timeline-content {
+			width: 45%;
+			background: transparent;
+			padding: 20px;
+			@include prefix(transition, all .3s ease);
+
+			h2 {
+				display: none;
+			}
+
+			&.right {
+				float: right;
+			}
+            .dateProf {
+                
+            }
+            .profession {
+                position: relative;
+                top: -15px;
+                width: 100%;
+                font-size: 20px;
+                font-weight: 700;
+                color: $mauveColor;
+                padding-right: 10px;
+                display: flex;
+                justify-content: flex-end;
+                text-align: right;
+            }
+            .nationalite {
+                position: relative;
+                top: -30px;
+                display: flex;
+                text-align: right;
+                padding-right: 10px;
+                justify-content: flex-end;
+                width: 100%;
+                font-size: 15px;
+                font-weight: 600;
+                color: $greyColor;
+                padding-left: 10px;
+            }
+            .datePortrait {
+                width: 100%;
+                border-bottom: 2px solid $orangeColor;
+                font-size: 20px;
+                font-weight: 700;
+                color: $greyColor;
+                padding-left: 10px;
+                padding-bottom: 5px;
+            }
+            .right .datePortrait {
+                padding-right: 10px;
+            }
+            .descriptionBtn {
+                border: none;
+                color: $mauveColor;
+                background-color: transparent;
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding-left: 10px;
+                position: relative;
+                top: -60px;
+                i {
+                    font-size: 30px;
+                    margin-right: 10px;
+                }
+                span {
+                    font-size: 15px;
+                    color: $greyColor;
+                    font-weight: 500;
+                }
+                
+            }
+            .portraitDesc {
+                margin-top: 0;
+                padding-left: 10px;
+                color: $greyColor;
+                color: $greyColor;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+		}
+	}
+}
+.left .datePortrait::before {
+    content: '';
+    display: block;
+    position: relative;
+    top: 36px;
+    left: -23px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    color: white;
+    border: 2px solid $orangeColor;
+}
+.right .datePortrait::before {
+    content: '';
+    display: block;
+    position: relative;
+    top: 36px;
+    right: -100%;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    color: white;
+    border: 2px solid $orangeColor;
+}
+
+// Buttons
+.btn {
+	padding: 5px 15px;
+	text-decoration: none;
+	background: transparent;
+	border: 2px solid lighten($primary-color, 10%);
+	color: lighten($primary-color, 10%);
+	display: inline-block;
+	position: relative;
+	text-transform: uppercase;
+	font-size: 12px;
+	@include prefix(border-radius, 5px);
+	@include prefix(transition, background .3s ease);
+	@include prefix(box-shadow, 2px 2px 0 lighten($primary-color, 10%));
+
+	&:hover {
+		box-shadow: none ;
+		top: 2px;
+		left: 2px;
+		@include prefix(box-shadow, 2px 2px 0 transparent);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#timeline {
+		margin: 0px;
+		padding: 0px;
+        width: 90%;
+		
+		.timeline-item {
+			.timeline-content {
+				width: 90%;
+				float: right;
+				
+				&:before, &.right:before {
+					left: 10%;
+					margin-left: -6px;
+					border-left: 0;
+					border-right: 7px solid $timeline-color;
+				}
+			}
+
+			.timeline-icon {
+				left: 0;
+			}
+            
+            
+		}
+	}
+}
+
+.portraitImg {
+    display: block;
+    width: 90%;
+    margin-left: 0;
+}
+
+.right .portraitImg {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.visible {
+    display: none;
+}
+
+// Section RESSOURCES
+#ressourceSection {
+    @extend %section;
+}
+
+#ressourceSelect {
+    margin: 10px 10px 30px 0;
+    display: flex;
+    justify-content: flex-start;   
+    #left-btn {
+        margin-left: 0;
+    }
+}
+
+.ressourceBtn {
+    border: 2px solid $greyColor;
+    @extend %bouton;
+    margin: 15px;
+    background-color: white;
+    font-family: $textFont;
+    font-weight: 600;
+    font-size: 12px;
+    color: $greyColor;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.ressourceBtn:hover, .ressourceBtn:focus {
+    background-color: $orangeColor;
+    border: 2px solid $orangeColor;
+    color: #fff;
+    transition: 0.5s;
+}
+
+#leftBtn {
+    margin-left: 0;
+}
+
+#ressourceParent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ressourceChild {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 50px;
+    width: 300px;
+    
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    
+    .overlay {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba($orangeColor, 0.8);
+        opacity: 0;
+        transition: .5s ease;
+        h2, p, a {
+            color: #ffffff;
+            font-family: $textFont;
+        }
+        h2 {
+            font-size: 15px;
+        }
+        p {
+            font-size: 13px;
+        }
+        .infoLink {
+            @extend %bouton;
+            margin-top: 10px;
+            align-self: flex-end;
+            border: 2px solid #fff;
+            color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .infoLink:hover {
+            background-color: $mauveColor;
+            border: 2px solid $mauveColor;
+            transition-duration: 0.4s;
+        }
+    }
+}
+.ressourceChild:hover .overlay {
+    opacity : 1;
+}
+
+.hideRessource {
+    display: none;
+}
+
+.mfp-bg {
+    width: 82%;
+    top: 0;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.white-popup-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    h2, h3, a, p {
+        color: #fff;
+        font-family: $textFont;
+    }
+    h2, h3 {
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    img, iframe {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    p {
+        line-height: 1.5;
+        margin-bottom: 50px;
+    }
+    .lienBtn {
+        align-self: flex-end;
+        background-color: white;
+        @extend %bouton;
+        text-decoration: none;
+        color: $mauveColor;
+        font-weight: 600;
+        transition-duration: 0.4s;
+        i {
+            padding-right: 5px;
+        }
+    }
+    .lienBtn:hover {
+        color: #fff;
+        background-color: $orangeColor;
+        transition-duration: 0.4s;
+    }
+}
+
+// Style Sabrina -> inscription / Login
+#sign button {
+    @extend %bouton;
+    color: #fff; 
+    background-color: $mauveColor; 
+    border: 1px solid;
+}
+
+#sign input {
+    @extend %input;
+}
+            
+#sign p:empty {
+    display: none;
+}
+
+#sign>div {
+    border-left: 2px solid $orangeColor;
+    position: relative;
+    height: 400px;
+}
+
+#sign>div::before {
+    @extend %rond;
+}
+
+#sign div {
+    @extend %section;
+    display : flex;
+    
+    div {
+        display: flex;
+        width: 40%;
+        flex-direction:column;
+
+        h2 {
+            align-self: flex-start;
+            color : $greyColor;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            
+            input, button {
+                margin-bottom: 40px;
+            }
+        }  
+    }
+}
+
+// Style section Evénements
+#eventSection {
+    @extend %section;
+    margin-top: 100px;
+}
+.eventParent {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-left: 2px solid $orangeColor;
+    position: relative;
+    height: 280px;
+    margin-bottom: 100px;
+}
+.eventOpen {
+    height : 350px;
+}
+.eventParent::before {
+    @extend %rond;
+}
+.dateHeure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+    height: 300px;
+
+    color: $mauveColor;
+    .date {
+        font-weight: 600;
+        font-size: 50px;
+        margin: 0;
+        p {
+            margin: 0;
+            font-family: Roboto;
+        }
+    }
+    > p {
+        border-top: 2px solid $mauveColor;
+        padding-top: 50px;
+        margin-bottom: 50px;
+        font-size: 30px;
+        font-weight: 400;
+        font-family: Roboto;
+    }
+}
+.eventDetail {
+    width: 80%;
+}
+
+.nomImg {
+    margin: 0;
+    display: flex;
+    height: auto;
+    position: relative;
+    h2 {
+        background-color: $orangeColor;
+        color: white;
+        width: 40%;
+        margin: 0;
+        padding: 50px;
+    }
+    img {
+        width: 100%;
+        margin: 0;
+    }
+    button {
+        border: none;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        display: block;
+        text-align: center;
+        vertical-align: middle;
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: white;
+        background-color: $greyColor;
+      
+    }
+}
+
+.descriptionIns {
+    margin: 0;
+    display: flex;
+    height: 110px;
+    .description {
+        font-size: 15px;
+        line-height: 1.5;
+        display: flex;
+        width: 80%;
+        overflow: hidden;
+        button {
+            position: relative;
+            top: 40px;
+            color: $orangeColor;
+            border: none;
+            background-color: white;
+            i {
+                color: $mauveColor;
+            
+            }
+        }
+        
+    }
+    .descriptionOpen {
+            
+            height: 350px;
+        }
+    
+    .inscriptionBtn {
+        width: 20%;
+        background-color: $orangeColor;
+        border: none;
+        color: white;
+        text-decoration: none;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        i {
+            margin-left: 10px;
+        }
+    }
+}
+
+.like i {
+    color: #ea5920;
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+/* Style info*/
+#mailer, #map, #faqParent {
+    border-left: 2px solid $orangeColor;
+    position: relative;
+}
+
+#mailer::before, #map::before, #faqParent::before {
+  @extend %rond;
+}
+
+#info {
+    @extend %section;
+    input, textarea {
+    @extend %input;
+    margin-bottom: 40px;
+    }
+    
+    button {
+    @extend %boutonInfo;
+    }
+    
+    h2 {
+        margin-left: 50px;
+        color : $greyColor;
+    }
+}
+
+.intro {
+    display: flex;
+    font-weight: 800;
+    font-size: 35px;
+    width: 450px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    p {
+        text-align: center;
+        color: $greyColor;
+    }
+    i {
+        font-size: 80px;
+        color: $mauveColor;
+        font-weight: 800;
+    }
+    i:first-of-type {
+        margin-left: 20px;
+    }
+    i:nth-of-type(2) {
+        align-self: flex-end;
+    }
+}
+
+#mailer {
+    height: 450px;
+    margin-bottom: 100px;
+}
+
+#mailerForm {
+    width: 40%;
+    display : flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+}
+    
+#map {
+    height: 700px;
+    margin-bottom: 100px;
+    figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        figcaption {
+            color: $greyColor;
+            display: flex;
+            margin-top: 20px;
+            text-align: center;
+            i {
+                color: $orangeColor;
+                margin-right: 20px;
+            }
+            address {
+                font-weight: 500;
+                font-size: 20px;
+                font-style: normal;
+                span {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+// plugin faq // 
+#faqParent {
+    height: 600px;
+
+    ul, li { list-style-type: none;}
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #containerFaq {
+        width: 100%;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: auto;
+    }
+
+    .faq li { padding: 10px 15px 10px 15px;
+       margin-bottom: 20px; 
+    }
+
+    .faq li.q {
+      background: #FFFFFF;
+      font-weight: bold;
+      font-size: 13px;
+      cursor: pointer;
+      color: #6A3875;
+      border: 1px solid #6A3875;
+      border-radius: 4px; 
+      padding: 10px 15px 10px 15px;
+      width: 100%
+    }
+
+    .faq li.a {
+      display: none;
+      color: $greyColor;
+    }
+
+    .rotate {
+      -moz-transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+}
+
+@media (max-width:800px) {
+
+#container { width: 90%; }
+}
+
+// Croix - Flèche FAQ
+.q {
+    a { 
+        transition: 300ms ease-in-out background-color;
+        border-radius: 10px;
+        &.open {
+        }
+    }
+    .arrow-down-close {
+        width: 80%;
+        height: 25px;
+        display: block;
+        text-align: right;
+        padding-right: 30px;
+
+      &:before, &:after { 
+        content: '';
+        display: inline-block;
+        height: 24px;
+        width: 4px;
+        background-color: #6a397c;
+        border-radius: 10px;
+        position: relative;
+        transition: 300ms ease-in-out all;
+      }
+
+      &:before {
+        transform: rotate(-45deg);
+        left: 7px;
+        top: -2px;
+      }
+
+      &:after {
+        transform: rotate(45deg);
+        left: 17px;
+        top: -2px;
+    //    background-color: #6a397c;
+      }
+
+      &.open {
+        &:before {
+          transform: translateX(7px) rotate(-45deg);
+            background-color: #e95a24;
+        }
+        &:after {
+          transform: translateX(-7px) rotate(45deg);
+            background-color: #e95a24;
+        }
+      }
+    }
+} 
+
+// Section compte
+#compteSection {
+    @extend %section;
+    #profil {
+        border-left: 2px solid $orangeColor;
+        position: relative;
+        height: 750px;
+        margin-bottom: 100px;
+    }
+    #profil::before {
+        @extend %rond;
+    }
+    h2 {
+        color: $greyColor;
+        margin-left: 50px;
+    }
+
+    #profilDetail {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction:column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        #photo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background-color: $orangeColor;
+            #userLogo {
+                display: flex;
+                color: #fff;
+            }
+        }
+        #profilDesc {
+    //        padding-left: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+    #profilBtn {
+        @extend %bouton;
+        color: $mauveColor; 
+        background-color: #fff; 
+        border: 1px solid $mauveColor;
+        }
+
+        #profilBtn:hover {
+            color: #fff;
+            background-color: $mauveColor;
+            transition-duration: 0.4s;
+        }
+    }
+    #formProfil {
+        border-left: 2px solid $orangeColor;
+        position: relative;
+        height: 550px;
+        margin-bottom: 100px;
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+            label {
+                font-size: 15px;
+                margin-bottom: 20px;
+                font-weight: 500;
+            }
+            input, textarea {
+                @extend %input;
+                margin-bottom: 40px;
+            }
+            button {
+                @extend %boutonInfo;
+            }
+        }
+    }
+    #formProfil::before {
+        @extend %rond;
+    }
+}
+ // Style Evénements compte
+#compteEventSection {
+    h2 {
+        color: $greyColor;
+        margin-left: 50px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    @extend %section;
+    .eventParent {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        border-left: 2px solid $orangeColor;
+        position: relative;
+        height: 280px;
+        margin-bottom: 100px;
+    }
+    .eventParent::before {
+        @extend %rond;
+    }
+
+.eventOpen {
+    height : 350px;
+}
+    .dateHeure {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 15%;
+        height: 300px;
+
+        color: $mauveColor;
+        .date {
+            font-weight: 600;
+            font-size: 50px;
+            margin: 0;
+            p {
+                margin: 0;
+                font-family: Roboto;
+            }
+        }
+        > p {
+            border-top: 2px solid $mauveColor;
+            padding-top: 50px;
+            margin-bottom: 50px;
+            font-size: 30px;
+            font-weight: 400;
+            font-family: Roboto;
+        }
+    }
+    .eventDetail {
+        width: 80%;
+    }
+
+    .nomImg {
+        margin: 0;
+        display: flex;
+        height: auto;
+        position: relative;
+        h2 {
+            background-color: $orangeColor;
+            color: white;
+            width: 40%;
+            margin: 0;
+            padding: 50px;
+        }
+        img {
+            width: 100%;
+            margin: 0;
+        }
+        button {
+            border: none;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            display: block;
+            text-align: center;
+            vertical-align: middle;
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: white;
+            background-color: $greyColor;
+        }
+    }
+}
+
+.descriptionIns {
+    margin: 0;
+    display: flex;
+    height: 110px;
+    .description {
+        font-size: 15px;
+        line-height: 1.5;
+        display: flex;
+        width: 80%;
+        overflow: hidden;
+        button {
+            position: relative;
+            top: 40px;
+            color: $orangeColor;
+            border: none;
+            background-color: white;
+            i {
+                color: $mauveColor;
+            }
+        }
+    }
+
+    .inscriptionBtn {
+        width: 20%;
+        background-color: $orangeColor;
+        border: none;
+        color: white;
+        text-decoration: none;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        i {
+            margin-left: 10px;
+        }
+    }
+}
+
+.like i {
+    color: #ea5920;
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+//RESPONSIVE
+
+@media only screen and (max-width: 750px) {
+    
+// logo 
+#logoMobile {
+    display:flex;
+    top: 75px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 5%;
+    }
+    
+    #headertop {
+        
+        margin:0px;
+    }
+    #logo {
+        display:none;
+    }
+    
+    .lang {
+       display: none;
+    }
+    
+    .sign {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        cursor: pointer;
+    }
+    
+    #headerTop #leftLinks a:nth-of-type(3) {
+    margin-left: 0 ;}
+  
+    
+    #welcomePseudo {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        
+    }
+    #ligneNav {
+        display: none;
+    }
+    
+// Burger menu button
+//menu burger 
+$burger--thickness: 4px;
+.burger {
+	$width: 28px;
+	position: absolute;
+    right: 10px;
+    top: 17px;
+	display: inline-block;
+    border: 0;
+	background: none;
+	outline: 0;
+	padding: 0;
+	cursor: pointer;
+
+	border-bottom: $burger--thickness solid $orangeColor;
+	width: $width;
+
+	transition: border-bottom 1s ease-in-out;
+	-webkit-transition: border-bottom 1s ease-in-out; 
+
+	// Fix for extra space in Firefox
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}	 
+
+	&:before {
+		content: "";
+		display: block;
+		border-bottom: $burger--thickness solid $orangeColor;
+		width: 100%;
+		margin-bottom: 5px;
+		transition: transform 0.5s ease-in-out;    
+		-webkit-transition: -webkit-transform 0.5s ease-in-out;        
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		border-bottom: $burger--thickness solid $orangeColor;
+		width: 100%;
+		margin-bottom: 5px;
+		transition: transform 0.5s ease-in-out;
+		-webkit-transition: -webkit-transform 0.5s ease-in-out;
+	}
+}
+
+.burger-check {
+  display: none;
+}
+
+.burger-check:checked ~ .burger {
+  border-bottom: $burger--thickness solid transparent;
+  transition: border-bottom 0.8s ease-in-out;
+  -webkit-transition: border-bottom 0.8s ease-in-out;
+
+  &:before {
+    transform: rotate(-405deg) translateY(1px) translateX(-3px);
+    -webkit-transform: rotate(-405deg) translateY(1px) translateX(-3px);      
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  }
+
+  &:after {
+    transform: rotate(405deg) translateY(-4px) translateX(-5px); 
+    -webkit-transform: rotate(405deg) translateY(-4px) translateX(-5px);       
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  }
+}
+
+// * * * Navigation * * *
+$navigation__transition: max-height 0.5s ease-in-out;
+
+.navigation {
+  overflow: hidden;
+  max-height: 0;
+  transition: $navigation__transition;
+
+}
+
+.burger-check:checked ~ .navigation {
+  max-height: 500px;
+  
+  transition: $navigation__transition;
+}
+
+// * * * Demo * * *
+
+
+a {
+  color: inherit;
+  
+}
+
+small {
+  font-size: 14px;
+}
+
+ul {
+  
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+}
+
+li {
+  list-style: none;
+  font-size: 25px;
+  padding: 0;
+  
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }    
+  }
+}
+    
+.intro {
+    display: flex;
+    font-weight: 800;
+    font-size: 17px;
+    width: 225px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    p { display: flex;
+        
+        color: $greyColor;
+    }
+    i {
+        
+        font-size: 40px;
+        color: $mauveColor;
+        font-weight: 800;
+    }
+    i:first-of-type {
+        margin-left: 20px;
+    }
+    i:nth-of-type(2) {
+        align-self: flex-end;
+    }
+}
+#timeline {
+  background-image: none;
+}
+#timeline .timeline-item .timeline-content .nationalite {
+                position: relative;
+                top: 30px;
+                display: flex;
+                text-align: right;
+                padding-right: 10px;
+                justify-content: flex-end;
+                width: 100%;
+                font-size: 15px;
+                font-weight: 600;
+                color: $greyColor;
+                padding-left: 10px;
+       
+    }
+    
+    #sign {
+        div {
+            border: none;
+            display: flex;
+            flex-direction: column;
+            div {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+        }
+        div::before {
+            display: none;
+        }
+    }
+    
+}
+
+
