@@ -3,7 +3,7 @@
 html {
   width: 100%;
   font-size: 100%;
-  font-family: Raleway;
+  font-family: Montserrat;
   font-weight: normal;
   overflow-x: hidden; }
 
@@ -51,7 +51,7 @@ body {
     -ms-flex-align: center;
     align-items: center;
     padding: 20px;
-    font-family: Raleway; }
+    font-family: Montserrat; }
     #home > div > div:nth-of-type(2) h1 {
       font-weight: 400;
       margin-top: 0;
@@ -282,7 +282,7 @@ section {
   font-size: 15px;
   padding-top: 50px;
   width: 92%;
-  font-family: Raleway; }
+  font-family: Montserrat; }
 
 h3 {
   text-align: center;
@@ -531,7 +531,7 @@ h3 {
   text-align: center !important; }
 
 .iziModal-content {
-  font-family: Raleway; }
+  font-family: Montserrat; }
 
 .iziModal-content > div {
   padding: 10px !important;
@@ -709,7 +709,7 @@ footer {
   width: 92%;
   height: 10vh;
   background-color: #2a590c;
-  font-family: Raleway;
+  font-family: Montserrat;
   position: relative; }
   footer p {
     margin: 0;
